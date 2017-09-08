@@ -1,0 +1,11 @@
+<view>
+  <view class="item" wx:for="{{privilegeList}}" wx:for-item="privilege">
+    <view class="title">{{privilege.name}} {{privilege.nameCn}}</view>
+    <view class="content">
+      <view class="flexRow" wx:for="{{privilege.exclusiveInfoList}}">
+        <text class="dot">·</text>
+        <text class="info">{{item}}</text>
+      </view>
+    </view>
+  </view>
+</view>

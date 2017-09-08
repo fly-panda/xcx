@@ -1,0 +1,65 @@
+<view class="Wrap">
+  <button class="loginBtn" bindtap="loginBox" wx:if="{{notLogin}}">登录/注册</button>
+  <view wx:if="{{isLogin}}" class="memberBox">
+    <view class="whiteBg"></view>
+    <view class="member" >
+      <image src="/images/icon/user.png" class="userPhoto"></image>
+      <text>{{phone}} </text>
+      <text class="txtOrange exit" catchtap="exit"> 退出</text>
+    </view>
+  </view>
+</view>
+<view class="itemList">
+  <!-- <view class="item">
+    <view>
+      <text class="iconfont icon-lvyou"></text>
+      <text>度假订单</text>
+    </view>
+    <text class="arrow iconfont icon-xiangyoujiantou"></text>
+  </view> -->
+  <view class="item" catchtap="hotelOrderListPage">
+    <view>
+      <text class="iconfont icon-hotel"></text>
+      <text>酒店订单</text>
+    </view>
+    <text class="arrow iconfont icon-xiangyoujiantou"></text>
+  </view>
+  <view class="item" catchtap="bindBankCardPage">
+    <view class="flexRow center">
+      <text class="iconfont icon-yinhangqia"></text>
+      <text>我的银行卡</text>
+    </view>
+    <text class="arrow iconfont icon-xiangyoujiantou"></text>
+  </view>
+  <!-- <view class="item">
+    <view>
+      <text class="iconfont icon-qunzu"></text>
+      <text>常用旅客</text>
+    </view>
+    <text class="arrow iconfont icon-xiangyoujiantou"></text>
+  </view> -->
+
+  <view class="contact">
+    <view class="contactTitle">联系我们</view>
+    <view class="item-info flexRow between center" catchtap="makePhoneCall">
+      <view class="flexRow center">
+        <text class="iconfont icon-tel"></text>
+        <text>电话咨询</text>
+      </view>
+      <text class="arrow iconfont icon-xiangyoujiantou"></text>
+    </view>
+    <button class="kefu item-info between" open-type="contact">
+      <view>
+        <text class="iconfont icon-icon052"></text>
+        <text>在线客服</text>
+      </view>
+      <text class="arrow iconfont icon-xiangyoujiantou"></text>
+    </button>
+    <view class="item-info">
+      <text class="iconfont icon-shijian"></text>服务时间：9:30-23:30
+    </view>
+    <view class="item-info">
+      <text class="iconfont icon-dizhi"></text>上海浦东南路1085号华申大厦601室
+    </view>
+  </view>
+</view>

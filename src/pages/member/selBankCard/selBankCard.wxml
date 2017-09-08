@@ -1,0 +1,6 @@
+<view class="wrap">
+  <view class="card flexRow center" wx:for="{{cardList}}" data-index="{{index}}" catchtap="selCard">
+    <image src="{{item.imgUrl}}"></image>
+    {{item.name}}
+  </view>
+</view>

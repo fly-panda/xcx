@@ -1,0 +1,156 @@
+<import src="/pages/loading/loading-template.wxml" />
+<!-- 页面加载状态 -->
+<block  wx:if="{{loadingPage}}">
+  <template is="loading" data="{{loadingTxt}}"/>
+</block>
+<!-- 页面加载完成 -->
+<block wx:else>
+  <view wx:if="{{imgUrls.length == 0}}">
+    <image class="noneImage" src="/images/hotel/noneImage.jpg"></image>
+  </view>
+  <swiper wx:else indicator-dots="{{indicatorDots}}" indicator-color="{{indicator}}" indicator-active-color="{{indicatorActiv}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="hotelImg">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item.url}}-w/750/h/450" class="slide-image" />
+      </swiper-item>
+    </block>
+    <view class="flexRow imgAllNum" catchtap="allPhotoPage">
+        <image src="/images/icon/icon-photo.png" class="iconPhoto"></image>
+        <text>{{imageArrNum}}</text>
+    </view>
+    <view class="imgBg"></view>
+  </swiper>
+
+  <view class="detail">
+
+    <view class="title cn">
+      <view class="cn">{{hotelBaseInfo.nameCn}}<text wx:if="{{!hotelBaseInfo.nameCn}}">{{hotelBaseInfo.name}}</text></view>
+      <view class="en" wx:if="{{hotelBaseInfo.nameCn}}">{{hotelBaseInfo.name}}</view>
+    </view>
+    <view class="brandBox">
+      <text class="txtLight tagTxt">品牌</text>
+      <block wx:if="{{hotelBaseInfo.brandDetail.nameCn === hotelBaseInfo.brandDetail.name}}">
+        <text class="brand">{{hotelBaseInfo.brandDetail.nameCn}}</text>
+      </block>
+      <block wx:else>
+        <text class="brand">{{hotelBaseInfo.brandDetail.nameCn}} {{hotelBaseInfo.brandDetail.name}}</text>
+      </block>
+    </view>
+    <view class="info flexRow between" wx:if="{{hotelBaseInfo.latitude}}" catchtap="hotelLocationPage">
+      <view class="flexRow" >
+        <text class="txtLight tagTxt">地址</text><text class="address address2" selectable="true">{{hotelBaseInfo.address}}</text>
+      </view>
+      <text class="arrow iconfont icon-xiangyoujiantou"></text>
+    </view>
+    <view class="info flexRow" wx:else>
+      <text class="txtLight tagTxt">地址</text>
+      <text class="address address1" selectable="true">{{hotelBaseInfo.address}}</text>
+    </view>
+    <view class="info flexRow more" catchtap="baseInfoPage">
+      <view>
+        <text class="txtLight tagTxt">详情</text><text>酒店电话：{{hotelBaseInfo.businessPhoneNumber}}</text>
+      </view>
+      <text class="arrow iconfont icon-xiangyoujiantou"></text>
+    </view>
+
+  </view>
+  <view class="booking">
+    <view class="flexRow itemDateInfo between center" catchtap="selectDate">
+      <view class="flexColumn">
+        <label class="txtLight">入住</label>
+        <text class="dateNum">{{checkinTxt}}</text>
+      </view>
+      <view class="daysInfo">
+        <text class="line"></text>
+        <text class="days">{{days}}晚</text>
+      </view>
+      <view class="flexColumn">
+        <label class="txtLight">离店</label>
+        <text class="dateNum">{{checkoutTxt}}</text>
+      </view>
+    </view>
+
+    <view class="priceLoading flexRow center" wx:if="{{loadingPrice}}">
+      <image class="loadingImg" src="/images/icon/loading.gif"></image>
+      <text class="loadingTxt">最低价格，最佳优待，马上就来...</text>
+    </view>
+    <view class="noPrice" wx:elif="{{!ratePlanByRoomList.length}}">
+      <text>该酒店此段时间内暂无价格，</text>
+      <text>请选择其他时间预订或选择其他酒店。</text>
+    </view>
+    <view class="roomsList" wx:else>
+      <view class="roomPriceTip">*价格为{{days}}晚总价且已含税</view>
+      <view class="roomItem" wx:for="{{ratePlanByRoomList}}">
+        <view class="room flexRow between center" data-index="{{index}}" catchtap="showRealteRoom">
+          <view class="roomType">
+            <text class="suit stress" wx:if="{{item.isSuite}}">返</text>
+            <text class="suit mgl3" wx:if="{{item.isSuite}}">套房</text>
+            <block wx:if="{{!item.status}}">
+              {{item.room}}
+            </block>
+            <block wx:if="{{item.status}}">
+              {{item.parseRoom}}
+            </block>
+          </view>
+
+          <view class="flexRow baseLine">
+            <text class="priceTag">￥</text>
+            <text class="priceNum">{{item.minTotalAmount}}</text>
+            <text class="priceTag">起</text>
+            <text class="{{item.status ? 'arrow iconfont icon-xiangxiajiantou' : 'arrow iconfont icon-xiangshangjiantou'}}"></text>
+          </view>
+        </view>
+
+        <view class="allRoomPrice" hidden="{{item.status}}">
+          <view class="roomPrice" wx:for="{{item.roomList}}" wx:for-item="subItem">
+            <view class="plan">
+              <view class="planTxt">
+                {{subItem.rate}}
+              </view>
+              <view class="flexRow roomAttr">
+                <view wx:if="{{subItem.mealTran}}" class="roomAttrItem highlight">
+                  {{subItem.mealTran}}
+                </view>
+                <view wx:if="{{subItem.cancelInfoShortTran}}" class="roomAttrItem txtLight cancelInfoShortTran">
+                  {{subItem.cancelInfoShortTran}}
+                </view>
+              </view>
+              <view class="roomAttr" wx:if="{{subItem.bed}}">
+                <text class="txtLight">{{subItem.bed}}</text><text space="true" class="txtLight" wx:if="{{subItem.bed != subItem.bedTran}}"> ({{subItem.bedTran}})</text>
+              </view>
+
+            </view>
+
+            <view class="planPrice">
+              <view>
+                <text class="priceTag">￥</text>
+                <text class="priceNumMid">{{subItem.cnyTotal}}</text>
+              </view>
+              <view class="preferential" wx:if="{{subItem.isRateCodePrice == 1}}">
+                <view class="zhuanxiangImg">
+                  <image src="/images/icon/zhuanxiang.png" ></image>
+                </view>专享价
+              </view>
+            </view>
+
+            <view class="bookingBtn" catchtap="bookingPage" data-no="{{subItem.no}}">
+              <text class="bookingTxt">预订</text>
+              <text class="guaranteeTypeTxt" wx:if="{{!subItem.guaranteeTypeTran}}">担保</text>
+              <text class="guaranteeTypeTxt" wx:else >{{subItem.guaranteeTypeTran}}</text>
+            </view>
+
+          </view>
+        </view>
+
+      </view>
+
+      <!-- <view class="contactBox flexRow">
+        <button class="kefu" open-type="contact"><text class="iconfont icon-icon052"></text>在线客服</button>
+        <view catchtap="makePhoneCall" class="tel"><text class="iconfont icon-tel"></text>电话咨询</view>
+      </view>
+ -->
+    </view>
+
+  </view>
+</block>

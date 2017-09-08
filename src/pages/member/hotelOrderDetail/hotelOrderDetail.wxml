@@ -1,0 +1,170 @@
+<import src="/pages/loading/loading-template.wxml" />
+<!-- 页面加载状态 -->
+<block  wx:if="{{loadingPage}}">
+  <template is="loading" data="{{loadingTxt}}"/>
+</block>
+<!-- 页面加载完成 -->
+<block wx:else>
+  <view class="wrap">
+    <view class="box orderStatus">
+      <view class="flexRow center between">
+        <view class="flexRow">
+          <text class="tag">订单状态</text>
+          <text class="waitting">{{orderDetail.statusDetail.name}}</text>
+        </view>
+        <block wx:if="{{isCancel}}">
+          <button class="eBtn btnCancel" loading="true">正在取消</button>
+        </block>
+        <block wx:else>
+          <button class="eBtn btnCancel" catchtap="cancelOrder" wx:if="{{orderDetail.statusDetail.value == '1'}}">取消订单</button>
+        </block>
+      </view>
+      <view class="msg" wx:if="{{orderDetail.statusDetail.value == '-2' || orderDetail.statusDetail.value == '-3'}}">取消时间：{{orderDetail.statusDetail.cancelDateTime}}</view>
+      <view class="msg" wx:if="{{orderDetail.statusDetail.value == '-1'}}">失败原因：{{orderDetail.statusDetail.bookingErrMsg}}</view>
+    </view>
+
+    <view class="box hotel">
+      <image src="https://file.36dong.com/badazhou/weixinxcx/bg/hotelBar.gif" class="hotelBar top "></image>
+      <view class="secTitle">
+        {{orderDetail.hotelDetail.nameCn}}{{orderDetail.hotelDetail.name}}
+      </view>
+      <view class="hotelInfo">
+        <text class="txt">入住：</text>{{orderDetail.hotelDetail.checkinTime}}，离店： {{orderDetail.hotelDetail.checkoutTime}}
+      </view>
+      <view class="hotelInfo flexRow between center" data-phoneNumber="{{orderDetail.hotelDetail.businessPhoneNumber}}" catchtap="makePhoneCall" >
+        <view>
+          <text class="txt">电话：</text>{{orderDetail.hotelDetail.businessPhoneNumber}}
+        </view>
+        <text class="arrow iconfont icon-xiangyoujiantou"></text>
+      </view>
+      <view class="hotelInfo addr flexRow between center" wx:if="{{orderDetail.hotelDetail.latitude}}" catchtap="hotelLocationPage">
+        <view class="flexRow">
+          <text class="txt">地址：</text>
+          <text>{{orderDetail.hotelDetail.address}}</text>
+        </view>
+        <text class="arrow iconfont icon-xiangyoujiantou"></text>
+      </view>
+      <view class="hotelInfo addr flexRow between center" wx:else>
+        <text class="txt">地址：</text>
+        <text>{{orderDetail.hotelDetail.address}}</text>
+      </view>
+      <image src="https://file.36dong.com/badazhou/weixinxcx/bg/hotelBar.gif" class="hotelBar bottom "></image>
+    </view>
+
+    <view class="box userInfo">
+      <view class="view flexRow">
+        <text class="tag">订单编号</text>
+        <text>{{orderDetail.no}}</text>
+      </view>
+      <view class="flexRow" wx:if="{{orderDetail.statusDetail.confirmationNo}}">
+        <text class="tag">确认号</text>
+        <text class="confirmNo">{{orderDetail.statusDetail.confirmationNo}}</text>
+      </view>
+      <view>
+        <view class="flexRow">
+          <text class="tag">房型</text>
+          <view class="roomType">
+            <text>{{orderDetail.room}}</text>
+            <view class="contain">
+              <text wx:if="{{orderDetail.meal}}">{{orderDetail.meal}}</text>
+              <text wx:if="{{orderDetail.bed}}">{{orderDetail.bed}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="flexRow">
+        <text class="tag">入住</text>
+        <text>{{orderDetail.checkinDate}} ~ {{orderDetail.checkoutDate}} （{{orderDetail.stayDayNum}}晚）</text>
+      </view>
+      <view class="flexRow">
+        <text class="tag">入住人</text>
+        <view class="personList">
+          <view wx:for="{{personList}}"><text class="prefixDetail">{{item.prefixDetail.value}}</text>{{item.lastName}}, {{item.firstName}}</view>
+        </view>
+      </view>
+      <view class="flexRow">
+        <text class="tag">联系电话</text>
+        <text class="phone">+{{orderDetail.phoneAreaCode}} {{orderDetail.phone}}</text>
+
+      </view>
+      <view class="flexRow" wx:if="{{orderDetail.bookingRemark}}">
+        <text class="tag">备注</text>
+        <text>{{orderDetail.bookingRemark}}</text>
+      </view>
+    </view>
+
+    <view class="box">
+      <view class="view flexRow totalPrice">
+        <text class="tag">订单总额</text>
+        <view>
+          <text class="code">{{orderDetail.currencyDetail.code}} </text>
+          <text class="totalNum">{{orderDetail.total}}</text>
+        </view>
+
+      </view>
+      <view class="view flexRow" wx:if="{{orderDetail.currencyDetail.code != 'CNY'}}">
+        <text class="tag">约人民币</text>
+        <text>￥{{orderDetail.price}}</text>
+      </view>
+
+      <view class="view flexRow" wx:if="{{orderDetail.backToVipAmount}}">
+        <text class="tag">{{orderDetail.backToVipAmountType}}</text>
+        <text class="txtOrange">￥{{orderDetail.backToVipAmount}}</text>
+      </view>
+
+      <view class="view flexRow" wx:if="{{orderDetail.backToVipAmount && notHasBankCard}}">
+        <text class="tag">绑定银行</text>
+        <view class="txtOrange" catchtap="bindBankCard">
+          <text class="addCard">添加银行储蓄卡</text>
+          <text class="cardTip">(订单返现时将自动打到该账户)</text>
+        </view>
+      </view>
+
+      <view class="view flexRow orderDate">
+        <text class="tag">预订日期</text>
+        <text>{{orderDetail.createDateTime}}</text>
+      </view>
+    </view>
+
+    <view class="itemBox" wx:if="{{orderDetail.isRateCodePrice == '1'}}">
+      <view class="itemBoxTitle">专享优待</view>
+      <view class="itemBoxContent">
+        <view class="item" wx:for="{{exclusiveInfoList}}">
+          <text class="dot">·</text>
+          <text>{{item}}</text>
+        </view>
+      </view>
+      <view class="itemBoxTip">* 具体以下方房型方案或以酒店实际提供为准。</view>
+    </view>
+
+    <view class="itemBox" wx:if="{{rateDesc}}">
+      <view class="itemBoxTitle">房型方案</view>
+      <view class="itemBoxContent">
+        <view class="item" wx:for="{{rateDesc}}">
+          <text class="dot">·</text>
+          <text >{{item}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="itemBox" wx:if="{{cancellationDesc}}">
+      <view class="itemBoxTitle stress">取消政策</view>
+      <view class="itemBoxContent">
+        <view class="item cancelInfoShort">{{orderDetail.cancelInfoShort}}</view>
+        <view class="item" wx:for="{{cancellationDesc}}">
+          <text class="dot">·</text>
+          <text >{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="contactBox flexRow">
+    <button class="kefu" open-type="contact"><text class="iconfont icon-icon052"></text>在线客服</button>
+    <view catchtap="makePhoneCall" class="tel"><text class="iconfont icon-tel"></text>电话咨询</view>
+  </view>
+
+</block>
+
+
+

@@ -1,0 +1,19 @@
+.showToast{
+  position: fixed;
+  width: 750rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.promptBox{
+  padding:30px 30rpx;
+  border-radius:10px;
+  background-color: rgb(114,113,113);
+  color:#ffffff;
+  font-size: 16px;
+  text-align: center;
+  opacity: 0.85;
+  z-index: 100;
+}

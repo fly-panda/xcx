@@ -1,0 +1,160 @@
+<import src="/pages/loading/loading-template.wxml" />
+<!-- 页面加载状态 -->
+<block  wx:if="{{loadingPage}}">
+  <template is="loading" data="{{loadingTxt}}"/>
+</block>
+
+<block wx:else>
+  <view class="roomPlanBox">
+    <view class="roomInfo">
+      <view class="roomType" catchtap="roomDetail">
+        <view class="flexRow between center">
+          <view>
+            {{rateRule.room}}
+          </view>
+          <text class="{{isRoomDetailHide ? 'arrow iconfont icon-xiangshangjiantou' : 'arrow iconfont icon-xiangxiajiantou'}}" wx:if="{{roomDetail.length}}"></text>
+        </view>
+        <view class="flexRow dateInfo">
+          <text><text class="txtLight">入住 </text>{{checkinTxt}}</text>
+          <text><text class="txtLight">离店 </text>{{checkoutTxt}}</text>
+          <text>{{days}}晚</text>
+        </view>
+        <view class="contain flexRow" wx:if="{{rateRule.bedTran || rateRule.mealTran || rateRule.ext.maxOcc}}">
+          <view wx:if="{{rateRule.bedTran}}">{{
+            }}</view>
+          <view wx:if="{{rateRule.mealTran}}">{{rateRule.mealTran}}</view>
+          <view wx:if="{{rateRule.ext.maxOcc}}">最多入住：{{rateRule.ext.maxOcc}}</view>
+        </view>
+      </view>
+      <view class="roomDetail" wx:if="{{isRoomDetailHide}}">
+        <text wx:for="{{roomDetail}}">{{item}}</text>
+        <view class="itemTran" wx:if="{{roomDetailTran}}">
+          {{roomDetailTran}}
+        </view>
+        <view class="translateCn" catchtap="translateCn" data-name="ratePlan" wx:if="{{!roomDetailTran}}">
+          <text class="iconfont icon-fanyi"></text>
+        </view>
+      </view>
+
+      <view class="guarantee" wx:if="{{rateRule.guaranteeTypeTran}}">
+        {{rateRule.guaranteeTypeTran}} <text wx:if="{{rateRule.cancelInfoShortTran}}" class="cancelInfoShortTran">({{rateRule.cancelInfoShortTran}})</text>
+        <view class="guaranteeTypeDescTran">{{rateRule.guaranteeTypeDescTran}}</view>
+      </view>
+      <view class="cashBackBox" wx:if="{{rateRule.backToVipAmount}}">
+        <view class="cashBack">
+          <text>{{rateRule.backToVipAmountType}}</text>
+          <text class="backPrice">￥{{rateRule.backToVipAmount}}</text>
+        </view>
+        <text class="cashTip">返现金额将会在入住后一个月内返还到您的账户。</text>
+      </view>
+
+    </view>
+
+    <view class="itemBox" wx:if="{{rateRule.isRateCodePrice}}">
+      <view class="itemBoxTitle flexRow center between" catchtap="bestPrice">
+        <view class="flexRow center">
+          <view class="zhuanxiangImg">
+            <image src="/images/icon/zhuanxiang.png" ></image>
+          </view>
+          <text class="stress">专享优待-最低价保证</text>
+        </view>
+        <text class="arrow iconfont icon-xiangyoujiantou"></text>
+      </view>
+      <view class="itemBoxContent privilege">
+        <view class="item" wx:for="{{brandDetail}}">
+          <text class="dot">·</text>
+          <text >{{item}}</text>
+        </view>
+      </view>
+      <view class="itemBoxTip">* 具体以下方房型方案或以酒店实际提供为准。</view>
+    </view>
+
+    <view class="itemBox">
+      <view class="itemBoxTitle">房型方案</view>
+      <view class="itemBoxContent">
+        <view class="item" wx:for="{{ratePlan}}">
+          <text class="dot">·</text>
+          <text >{{item}}</text>
+        </view>
+        <view class="itemTran" wx:if="{{ratePlanTran}}">
+          {{ratePlanTran}}
+        </view>
+        <view class="translateCn" catchtap="translateCn" data-name="ratePlan" wx:if="{{!ratePlanTran}}">
+          <text class="iconfont icon-fanyi"></text>
+        </view>
+      </view>
+    </view>
+
+    <view class="itemBox" wx:if="{{extraCharges.length}}">
+      <view class="itemBoxTitle">第三人费用</view>
+      <view class="itemBoxContent">
+        <view class="item" wx:for="{{extraCharges}}">
+          <text class="dot">·</text>
+          <text >{{item}}</text>
+        </view>
+        <view class="itemTran" wx:if="{{extraChargesTran}}">
+          {{extraChargesTran}}
+        </view>
+        <view class="translateCn" catchtap="translateCn" data-name="extraCharges" wx:if="{{!extraChargesTran}}">
+          <text class="iconfont icon-fanyi"></text>
+        </view>
+      </view>
+    </view>
+
+    <view class="itemBox">
+      <view class="itemBoxTitle stress flexRow">取消政策<view class="txtLight" wx:if="{{rateRule.cancelInfoShortTran}}">（{{rateRule.cancelInfoShortTran}}）</view></view>
+      <view class="itemBoxContent">
+
+        <view class="item" wx:for="{{cancel}}">
+          <text class="dot">·</text>
+          <text >{{item}}</text>
+        </view>
+        <view class="itemTran" wx:if="{{cancelTran}}">
+          {{cancelTran}}
+        </view>
+        <view class="translateCn" catchtap="translateCn" data-name="cancel" wx:if="{{!cancelTran}}">
+          <text class="iconfont icon-fanyi"></text>
+        </view>
+      </view>
+      <view class="itemBoxTip">* 取消时间以酒店当地时间为准。</view>
+    </view>
+  </view>
+
+  <view class="totalList flexRow between center">
+    <view class="totalPriceBox flexRow center" catchtap='showPriceList'>
+      <view>
+        <view class="totalPrice">
+          <text class="totalTxt">总额 </text>
+          {{rateRule.rate.currencyCode}}{{rateTotal}}
+          <text class="{{isShowPriceListBtn ? 'iconfont icon-xiangshangjiantou' : ''}}"></text>
+        </view>
+        <view wx:if="{{rateRule.rate.currencyCode != 'CNY'}}" class="totalCnyPrice"><text class="totalTxt">约合 </text>￥{{rateRule.rate.cnyTotal}}</view>
+      </view>
+
+    </view>
+    <view class="booking">
+      <button class="eBtn btnPrimary" catchtap="confirmPage">立即预订</button>
+    </view>
+  </view>
+
+  <view class="priceInfoWrap" wx:if="{{isPriceInfoWrap}}">
+    <view class="blackBg" style="height:{{scrollViewHight}}px" catchtap='hidePriceInfoWrap'></view>
+    <view class="priceContent">
+      <view class="priceTitle flexRow between">
+        <text>{{days}}晚总价</text>
+        <text class="currency">{{rateRule.rate.currencyCode}} -- {{rateRule.rate.currencyNameCn}}</text>
+      </view>
+      <view class="box">
+        <view class="flexRow between">
+          <text class="tag">房费</text>
+          <text class="tagInfo">{{rateRule.rate.totalRoomPrice}}</text>
+        </view>
+        <view class="flexRow between">
+          <text class="tag">税及服务费</text>
+          <text class="tagInfo">{{rateRule.rate.extraTotalPrice}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+

@@ -1,0 +1,50 @@
+# 忽略系统生成的一些文件
+# OS X
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# OS X Thumbnails
+._*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# Linux
+*~
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# 忽略编辑器产生的临时文件
+
+# Jetbrains editors (PHPStorm, etc)
+.idea/
+*.iml
+
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+
+node_modules/
+npm-debug.log

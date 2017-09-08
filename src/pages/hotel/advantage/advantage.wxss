@@ -1,0 +1,5 @@
+.img{
+  display: block;
+  width: 750rpx;
+  height: 4215rpx;
+}

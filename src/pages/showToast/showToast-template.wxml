@@ -1,0 +1,5 @@
+<template name="showToast">
+  <view class="showToast" wx:if="{{status}}">
+    <view class="promptBox">{{msg}}</view>
+  </view>
+</template>

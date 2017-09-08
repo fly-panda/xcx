@@ -1,0 +1,234 @@
+<view class="container">
+
+  <view class="h1">
+    印度洋毛里求斯奢华Four Seasons四季度假村（搭配蔚蓝海岸线、奇趣动物乐园、碧海追逐海豚）
+  </view>
+  <view class="wrap">
+    <view class="day flexRow">
+      <view class="day-number">
+        <view>
+          D1
+        </view>
+      </view>
+      <view class="city">
+        北京-曼谷-沽岛soneva kiri
+      </view>
+    </view>
+    <view class="content">
+      <view class="title flexRow" style="display:none;">
+        <view>国内</view>
+        <image class="to" src="http://file.36dong.com/badazhou/weixinxcx/bg/to.png"></image>
+        <view>马尼拉</view>
+      </view>
+      <view class="route-list">
+
+        <view class="item">
+          <view class="icon">
+            <view class="iconfont icon-hangban"></view>
+          </view>
+          <view class="h5">
+            交通信息
+          </view>
+
+
+          <view class="textBox">
+            <view class="flightTitle">
+              中国海南航空集团 | HU7836
+            </view>
+            <view class="flightInfo flexRow">
+              <view class="flightTime">
+                <view>18:40</view>
+                <view class="mt-30">21:00</view>
+              </view>
+              <view class="flight-line">
+
+              </view>
+              <view class="airport">
+                <view>黄花国际机场</view>
+                <view class="mt-30">首都国际机场</view>
+              </view>
+            </view>
+            <view class="transferInfo flexRow">
+              <view class="circle">转</view>
+              <view class="transferCity">北京转机</view>
+            </view>
+            <view class="flightTitle">
+              中国海南航空集团 | HU7937
+            </view>
+            <view class="flightInfo flexRow">
+              <view class="flightTime">
+                <view>01:40</view>
+                <view class="mt-30">06:00</view>
+              </view>
+              <view class="flight-line">
+
+              </view>
+              <view class="airport">
+                <view>首都国际机场</view>
+                <view class="mt-30">瓦茨拉夫哈维尔国际机场</view>
+              </view>
+            </view>
+
+          </view>
+        </view>
+
+        <view class="item">
+          <view class="icon">
+            <view class="iconfont icon-hotel"></view>
+          </view>
+          <view class="h5">
+            入住酒店
+          </view>
+          <view class="textBox">
+            <view class="flexRow hotelInfo">
+              <view class="left">
+                <image src="{{imgUrls[0]}}"></image>
+              </view>
+              <view class="right">
+                <view class="hotelName">Hilton Surfers Paradise Hotel</view>
+                <view class="roomType">Superior Sea View Room</view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="item">
+          <view class="icon">
+            <view class="iconfont icon-canyinmeishi"></view>
+          </view>
+          <view class="h5">
+            餐食情况
+          </view>
+          <view class="textBox">
+            <view>早餐：度假村美式早餐</view>
+            <view>午餐：享用BBQ烧烤午餐</view>
+            <view>晚餐：度假村自助/点餐式晚餐</view>
+          </view>
+        </view>
+        <view class="item">
+          <view class="icon">
+            <view class="iconfont icon-hongqi"></view>
+          </view>
+          <view class="h5">
+            行程安排
+          </view>
+          <view class="textBox">
+            <view>
+              自行前往浦东国际机场，办理登机手续，搭乘毛里求斯航空飞往印度洋的岛国-毛里求斯 ，夜宿飞机上。
+            </view>
+            <view class="imgBox flexRow">
+              <view wx:for="{{imgUrls}}" class="imgView" catchtap="preview" data-url="{{item}}">
+                <image src="{{item}}" class="img" ></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="wrap">
+    <view class="day flexRow">
+      <view class="day-number">
+        <view>
+          D2
+        </view>
+      </view>
+      <view class="city">
+        毛里求斯-聆听精灵岛西追逐海豚之旅
+      </view>
+    </view>
+    <view class="content">
+      <view class="title flexRow" style="display:none;">
+        <view>国内</view>
+        <image class="to" src="http://file.36dong.com/badazhou/weixinxcx/bg/to.png"></image>
+        <view>马尼拉</view>
+      </view>
+      <view class="route-list">
+
+        <view class="item">
+          <view class="icon">
+            <view class="iconfont icon-qiche"></view>
+          </view>
+          <view class="h5">
+            交通信息
+          </view>
+
+
+          <view class="textBox">
+            毛里求斯 → 西海岸
+
+          </view>
+        </view>
+
+        <view class="item">
+          <view class="icon">
+            <view class="iconfont icon-hotel"></view>
+          </view>
+          <view class="h5">
+            入住酒店
+          </view>
+          <view class="textBox">
+            <view class="flexRow hotelInfo">
+              <view class="left">
+                <image src="{{imgUrls[0]}}"></image>
+              </view>
+              <view class="right">
+                <view class="hotelName">Hilton Surfers Paradise Hotel</view>
+                <view class="roomType">Superior Sea View Room</view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="item">
+          <view class="icon">
+            <view class="iconfont icon-canyinmeishi"></view>
+          </view>
+          <view class="h5">
+            餐食
+          </view>
+          <view class="textBox">
+            <view>早餐：度假村美式早餐</view>
+            <view>午餐：享用BBQ烧烤午餐</view>
+            <view>晚餐：度假村自助/点餐式晚餐</view>
+          </view>
+        </view>
+        <view class="item" style="border: none;">
+          <view class="icon">
+            <view class="iconfont icon-hongqi"></view>
+          </view>
+          <view class="h5">
+            行程安排
+          </view>
+          <view class="textBox">
+            <view>
+              自行前往浦东国际机场，办理登机手续，搭乘毛里求斯航空飞往印度洋的岛国-毛里求斯 ，夜宿飞机上。
+            </view>
+            <view class="imgBox flexRow">
+              <view wx:for="{{imgUrls}}" class="imgView" catchtap="preview" data-url="{{item}}">
+                <image src="{{item}}" class="img" ></image>
+              </view>
+            </view>
+          </view>
+        </view>
+<!--         <view class="item">
+
+        </view> -->
+      </view>
+    </view>
+  </view>
+
+
+
+</view>
+
+
+<view class="promptToast" hidden="{{showToast.nullHouse}}">{{showToast.alertMsg}}</view>
+
+
+<view class="collect">
+  <view bindtap="collect" class="{{ isSollect ? '' : 'active' }}">
+    <text class="iconfont icon-{{ isSollect ? 'xin' : 'xin1 active' }}"></text><text>{{ isSollect ? '收藏' : '已收藏' }}</text>
+  </view>
+</view>

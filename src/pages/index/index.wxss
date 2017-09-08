@@ -1,0 +1,236 @@
+@import "/pages/showModal/showModal-template.wxss";
+
+
+.searchBox{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  background:#ffffff;
+  margin:0;
+  padding-top:30rpx;
+  padding-bottom: 30rpx;
+  border-top: 1rpx solid #e5e5e5;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.tabBox{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #e5e5e5;
+  position: relative;
+}
+.tab{
+  flex:1;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight:600;
+  color:#494949;
+}
+.tab:nth-child(2){
+  border-left: 1rpx solid #e5e5e5;
+}
+.animationBar{
+  position: absolute;
+  bottom: 0;
+  width:50%;
+  height: 2px;
+  background: #fb5f0a;
+}
+.showBox{
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.item{
+  position: relative;
+  font-size: 16px;
+  height: 26px;
+  line-height: 26px;
+  padding:30rpx 0;
+  border-bottom: 1rpx solid #e5e5e5;
+  justify-content: space-between;
+}
+.itemDateInfo{
+  font-size: 13px;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.inputPlaceholder{
+  color: #b2b2b2;
+}
+.tag{
+  color: #888888;
+  font-size: 12px;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+.dateNum{
+  font-size: 16px;
+}
+.daysInfo{
+  position: relative;
+  font-size: 12px;
+  width: 30px;
+  height: 39px;
+  text-align: center;
+  line-height: 39px;
+}
+.days{
+  position: relative;
+  z-index: 2;
+  padding: 5px 0;
+  background: #fff;
+}
+.line{
+  position: absolute;
+  left: 14px;
+  top:0;
+  width: 1px;
+  background: #e5e5e5;
+  height: 39px;
+  z-index: 0;
+}
+
+.brandName{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.brandNameNum{
+  position:absolute;
+  display:block;
+  right:12px;
+  width:16px;
+  height:16px;
+  border-radius:20px;
+  background:#fb5f0a;
+  color:#fff;
+  line-height:16px;
+  text-align:center;
+  font-size:12px;
+  top:40rpx;
+}
+.preferential{
+  text-align: center;
+  padding:0 30rpx 30rpx 30rpx;
+  font-size: 13px;
+  justify-content: center;
+}
+.iconCny{
+  display: inline-block;
+  background: #fc8f53;
+  width:36rpx;
+  height: 36rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 36rpx;
+  margin-right: 10rpx;
+  border-radius: 3px;
+}
+.preferentialTxt{
+  color: #fc8f53;
+}
+.share{
+  background:#fff;
+  color:#666;
+  margin:0;
+  padding:0 36rpx;
+  height:45px;
+  border-radius: 0;
+  border:0;
+  font-size: 14px;
+  justify-content: center;
+}
+.share:after{
+  border:0;
+}
+.topBox{
+  margin-bottom: 30rpx;
+  background: #fff;
+  padding: 60rpx 30rpx;
+  border-bottom:1rpx solid #e5e5e5;
+}
+
+.content{
+  padding: 30rpx 30rpx 10rpx;
+}
+.advantage{
+  width: 690rpx;
+  padding-top:10px;
+  padding-bottom: 5px;
+  box-sizing: border-box;
+  margin:0 auto;
+}
+.advantage image{
+  width: 690rpx;
+  height: 68rpx;
+}
+.box{
+  position: relative;
+  margin-top: 30rpx;
+  background: #fff;
+  padding: 15px 30rpx;
+  border-top:1rpx solid #e5e5e5;
+  border-bottom:1rpx solid #e5e5e5;
+}
+.boxTitle{
+  text-align: center;
+  display: block;
+}
+.shareBox{
+  position: relative;
+  margin-top:30rpx;
+  background: #fdfdfd;
+  text-align: center;
+  z-index: 1;
+  /*color:#fc8f53;*/
+}
+.shareIcon{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 10rpx;
+  vertical-align: baseline;
+  flex: none;
+}
+.brandList{
+  position: relative;
+  background:#fff url('https://file.36dong.com/badazhou/weixinxcx/bg/brandBg1.jpg?1047') no-repeat;
+  background-size:690rpx 699rpx;
+  width: 690rpx;
+  height: 699rpx;
+  display: flex;
+  flex: row;
+  flex-wrap: wrap;
+}
+
+.brand{
+  width: 230rpx;
+  height: 116.5rpx;
+}
+
+.footer{
+  padding:30rpx;
+  text-align: center;
+}
+.footer text{
+  color: #b2b2b2;
+  display: block;
+}
+.footer text:last-child{
+  margin-top: 10rpx;
+}
+.bigTitle{
+  text-align: center;
+  margin-bottom: 30rpx;
+  margin-top:10rpx;
+  font-size: 18px;
+}
+.bestPrice{
+  margin-top: 30rpx;
+  width: 750rpx;
+  height: 240rpx;
+}
+.bestPriceImg{
+  width: 750rpx;
+  height: 240rpx;
+}

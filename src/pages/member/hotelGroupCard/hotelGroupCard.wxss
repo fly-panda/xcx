@@ -1,0 +1,198 @@
+@import "/pages/showToast/showToast-template.wxss";
+
+.container{
+  background: #fff;
+  padding: 30rpx;
+}
+
+.titleBox{
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  font-size: 18px;
+}
+.addBtn{
+  background: #fb5f0a;
+  color: #fff;
+  font-size: 14px;
+}
+.loadingBox{
+  padding: 30rpx 0;
+  text-align: center;
+  color: #888;
+  justify-content: center;
+}
+.loadingImg{
+  width: 30px;
+  height: 30px;
+}
+.box{
+  padding: 30rpx 0;
+  text-align: center;
+  color: #888;
+}
+.cardItem{
+  width: 690rpx;
+  position: relative;
+  margin-top: 30rpx;
+}
+.delectBox{
+  position:absolute;
+  right:10rpx;
+  top:10rpx;
+  background:#fff;
+  border-radius:100%;
+  width: 22px;
+  height: 22px;
+  text-align: center;
+  line-height: 20px;
+}
+.icon-guanbi{
+  font-size: 13px;
+  margin-right: 0;
+}
+
+.card{
+  position: relative;
+  width: 690rpx;
+  height:339rpx;
+  background: url('https://file.36dong.com/badazhou/weixinxcx/bg/cardTypeBg.jpg?1306') no-repeat;
+  background-size: 100%;
+  justify-content: center;
+}
+.selCard{
+  position:absolute;
+  right:0;
+  bottom:30rpx;
+  width:160rpx;
+  height:32px;
+  line-height:32px;
+  text-align:center;
+  background:#fc8f53;
+  color:#fff;
+  border-radius:5px 0 0 5px;
+  border:1rpx solid #ddd;
+  border-right: none;
+}
+
+.cardName{
+  padding-top: 30rpx;
+  font-size: 21px;
+  padding-left: 30rpx;
+  color: #fff;
+  text-shadow:0px 1px 1px #333;
+}
+.cardNo{
+  position: absolute;
+  left: 30rpx;
+  bottom: 30rpx;
+  color: #fff;
+  font-size: 18px;
+  text-shadow:0px 1px 1px #333;
+}
+.add{
+  font-size: 14px;
+}
+.icon-tianjia{
+  color: #fb5f0a;
+  font-size: 18px;
+}
+.popupBox{
+  width: 750rpx;
+  height: 100%;
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 98;
+  display: flex;
+  align-items: center;
+}
+.blackBg{
+  background: #000;
+  opacity: .5;
+  width: 750rpx;
+  height:100%;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top:0;
+}
+.addBox{
+  position: relative;
+  margin-left:30rpx;
+  margin-right: 30rpx;
+  width: 690rpx;
+  padding:15px 30rpx 15px;
+  background: #fff;
+  box-sizing: border-box;
+  z-index: 100;
+  border-radius: 3px;
+}
+.addBoxTitle{
+  font-size: 18px;
+  font-weight: 600;
+  height: 80rpx;
+  line-height: 50rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  box-sizing: border-box;
+}
+.close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size:16px;
+  margin-right:0;
+  width:44px;
+  height:44px;
+  line-height:50px;
+  text-align:center;
+  border-radius: 3px;
+}
+.btnBox{
+  text-align: center;
+}
+.btnBox button{
+  width: 86px;
+  height: 36px;
+  line-height: 36px;
+  border:0;
+  margin-top: 15px;
+}
+.cardType{
+  float: left;
+  width:300rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+  border:1rpx solid #e5e5e5;
+  margin-top: 26rpx;
+  margin-right: 30rpx;
+  color: #666;
+  box-sizing: border-box;
+}
+.marginNone{
+  margin-right: 0;
+}
+.inputBox{
+  margin-top: 30rpx;
+}
+.addBox input{
+  flex: 1;
+  background: #fff;
+  padding: 5px 20rpx;
+  height: 25px;
+  line-height: 25px;
+  border:1rpx solid #e5e5e5;
+  min-height:20px;
+}
+.select{
+  border-color:#fc8f53;
+  background: #fc8f53;
+  color: #fff;
+}
+.tag{
+  flex: none;
+  width:90rpx;
+  padding-right:24rpx;
+  box-sizing:border-box;
+}

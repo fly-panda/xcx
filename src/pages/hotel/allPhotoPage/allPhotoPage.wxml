@@ -1,0 +1,7 @@
+<view>
+  <view class="tabContent clear">
+    <view wx:for="{{imageArr}}" class="imgView {{(index + 1) % 2 == 0 ? 'last' : ''}}" catchtap="preview" data-url="{{item.url}}">
+      <image src="{{item.url}}-w/330/h/330" class="img" ></image>
+      </view>
+  </view>
+</view>

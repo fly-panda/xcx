@@ -1,0 +1,14 @@
+
+<template name="showModal">
+  <view class="showModal-wrap" wx:if="{{status}}">
+    <view class="showModal-mask"></view>
+    <view class="showModal-box">
+      <view class="showModal-close iconfont icon-guanbi" catchtap="hideShowModal"></view>
+      <view class="showModal-title">{{title}}</view>
+      <view class="showModal-content">
+        <view class="showModal-item" wx:for="{{content}}">{{item}}</view>
+      </view>
+      <view class="showModal-confirm" catchtap="hideShowModal">{{confirmText}}</view>
+    </view>
+  </view>
+</template>

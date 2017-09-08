@@ -1,0 +1,76 @@
+<import src="/pages/loading/loading-template.wxml" />
+<!-- 页面加载状态 -->
+<block  wx:if="{{loadingPage}}">
+  <template is="loading" data="{{loadingTxt}}"/>
+</block>
+
+
+<block wx:else>
+  <view wx:if="{{isBankCard}}">
+    <view class="prompting">
+      已经绑定本人的银行储蓄卡，订单返现时我们将自动打到该银行账户。
+    </view>
+    <view class="bankCardBox">
+      <view class="bankCard" style="background:{{bgColor}}">
+        <view class="flexRow">
+          <view class="bankLogo">
+            <image src="{{imgUrl}}"></image>
+          </view>
+          <view class="flexColumn">
+            <text class="bankName">{{myBankCard.bankName}}</text>
+            <text class="bankType">储蓄卡</text>
+            <view class="bankCardNo">
+              <text>****</text>
+              <text>****</text>
+              <text>****</text>
+              <text>{{lastBankNo}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="editCard" catchtap="editCard">i</view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{isEdit}}">
+    <view class="prompting">
+      请绑定本人的<text class="txtOrange">银行储蓄卡</text>，订单返现时我们将自动打到该银行账户。
+    </view>
+    <form bindsubmit="formSubmit">
+      <view class="section">
+        <view class="view flexRow center between" catchtap="selBankCard">
+          <view>
+            <text class="formTag">开户银行</text>
+            <text>{{bankName}}</text>
+          </view>
+          <text class="arrow iconfont icon-xiangyoujiantou"></text>
+        </view>
+
+        <view class="view flexRow center">
+          <text class="formTag">卡主姓名</text>
+          <input name="name" value="{{name}}"/>
+        </view>
+
+        <view class="view flexRow center">
+          <text class="formTag">银行卡号</text>
+          <input value="{{formatBankCardNumber}}" type="number" name="bankCardNumber" bindinput="formatBankCardNumber" />
+          <text class="iconfont icon-shanchu" hidden="{{ bankCardNumberLength > 0 ? false : true }}" bindtap="resetCardNumber"></text>
+        </view>
+
+      </view>
+
+      <button hover-class="press" class="btn largeBtn btnPrimary" formType="submit" wx:if="{{showSubmit}}">
+        确认绑定
+      </button>
+      <button class="btn largeBtn btnPrimary disable" wx:if="{{isSubmit}}">
+        提交中...
+      </button>
+
+    </form>
+  </view>
+</block>
+
+
+<!-- 弹出提示信息 -->
+<view class="promptToast" hidden="{{showToast.nullHouse}}">{{showToast.alertMsg}}</view>
+
+

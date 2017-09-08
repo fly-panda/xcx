@@ -1,0 +1,559 @@
+@import "/pages/showModal/showModal-template.wxss";
+
+.roomInfo{
+  background: #fff;
+  padding:30rpx;
+  flex-direction: column;
+  font-size: 13px;
+  border-bottom:1rpx solid #e5e5e5;
+}
+.roomType{
+  font-size: 16px;
+}
+
+.dateInfo{
+  justify-content: space-between;
+  margin-top:20rpx;
+  font-size:13px;
+  border-top:1rpx solid #e5e5e5;
+  padding-top:20rpx;
+}
+.shuoming{
+  color: #928464;
+  font-size: 18px;
+  margin-left: 10rpx;
+}
+
+.section{
+  padding: 0 30rpx 0;
+  background: #fff;
+  border-top:1rpx solid #e5e5e5;
+  border-bottom:1rpx solid #e5e5e5;
+}
+.formAreaTitle{
+  background: #f4f4f4;
+  padding: 30rpx;
+}
+.rp{
+  padding: 30rpx;
+}
+.view{
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.section > view:last-child{
+  border-bottom:none;
+}
+.formTag{
+  display: inline-block;
+  color:#b2b2b2;
+  width: 90px;
+  flex:none;
+}
+
+.radio{
+  flex: 1;
+}
+.cancel{
+  padding:30rpx;
+}
+.cancel text{
+  display: block;
+  padding-top: 10px;
+}
+.cancelTitle{
+  color: #fb5f0a;
+  font-weight: 600;
+}
+.cancel text:first-child{
+  padding-top: 0;
+}
+.agreeTip{
+  padding:30rpx 30rpx 80px 30rpx;
+  color: #888;
+  font-size: 12px;
+}
+.totalList{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  padding:0 30rpx;
+  border-top:1rpx solid #e5e5e5;
+  background: #fff;
+  box-sizing:border-box;
+  z-index: 100;
+}
+.totalTxt{
+  color: #b2b2b2;
+  font-size: 12px;
+}
+.totalPrice{
+  font-size: 18px;
+  color: #fb5f0a;
+}
+.priceInfo{
+  margin-left: 20rpx;
+  padding:10rpx 16rpx;
+  border:1rpx solid #e5e5e5;
+  color: #888;
+  font-size: 12px;
+  border-radius: 5px;
+}
+.icon-xiangshangjiantou{
+  font-size: 12px;
+  margin-left: 10rpx;
+  margin-top: 3px;
+  font-weight: 600;
+  margin-right: 0;
+}
+.bookingBtn{
+  background: #fb5f0a;
+  color: #fff;
+  font-size: 16px;
+  height:40px;
+  line-height:40px;
+  padding-left:20px;
+  padding-right:20px;
+}
+picker{
+  display: block;
+  padding:30rpx 0 30rpx 90px;
+  position: relative;
+  height: 25px;
+  line-height: 25px;
+}
+.pickerWrap{
+  position: relative;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.pickerChildLeft{
+  position: absolute;
+  left: 0;
+  top:30rpx;
+  height: 25px;
+  line-height: 25px;
+}
+.pickerChildright{
+  position: absolute;
+  right: 0;
+  top:30rpx;
+  line-height: 24px;
+}
+.view input{
+  height: 24px;
+  overflow: visible;
+  min-height: 0;
+}
+.totalCnyPrice{
+  margin-top: 10rpx;
+  color: #888;
+}
+.promptToast{
+  width:420rpx;
+  height:65px;
+  top:460rpx;
+  left: 26%;
+  line-height: 65px;
+  border-radius:10px;
+  background-color: rgb(114,113,113);
+  color:#ffffff;
+  font-size: 16px;
+  text-align: center;
+  position: fixed;
+  z-index: 100;
+  opacity: 0.85;
+}
+
+.validity{
+  position: relative;
+  height: 24px;
+}
+
+.placeholder{
+  position: absolute;
+  left: 90px;
+  top: 30rpx;
+  background: #fff;
+  color: #777;
+  padding-right: 60px;
+}
+.simulateBtn{
+  display:block;
+  background: #fb5f0a;
+  color: #fff;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 5px;
+  font-size: 14px;
+  border:1rpx solid #fb5f0a;
+  padding-left:14px;
+  padding-right:14px;
+  box-sizing:border-box;
+  text-align:center;
+  text-decoration:none;
+  border-radius:5px;
+  -webkit-tap-highlight-color:transparent;
+  overflow:hidden;
+  opacity: .5;
+}
+/*国家区号*/
+.codeBox{
+  width: 90px;
+  flex: none;
+}
+.codePicker{
+  padding: 0;
+}
+.icon-xiangxiajiantou{
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+}
+.otherCode{
+  height: 24px;
+  line-height: 24px;
+  width: 60px;
+  border-right: 1rpx solid #e5e5e5;
+  margin-right: 10px;
+}
+/*房间入住人*/
+.person{
+  position: relative;
+  padding: 0 30rpx;
+}
+.line{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4rpx;
+  background: #fff;
+  width: 750rpx;
+}
+.roomBox{
+  padding: 0 30rpx;
+}
+.sexBox{
+  display: inline-block;
+}
+.sexPicker{
+  padding: 0;
+  width: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: relative;
+}
+.sex{
+  color: #666;
+  display: inline-block;
+  width: 86rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 12px;
+  text-align: center;
+  border:1rpx solid #e5e5e5;
+  flex: none;
+  background: #fff;
+}
+.abs{
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 2px;
+}
+.room{
+  padding-top: 30rpx;
+}
+.addPerson{
+  width: 75px;
+  height: 22px;
+  line-height: 22px;
+  color: #fb5f0a;
+  text-align: center;
+  font-size: 12px;
+}
+.control{
+  position:absolute;
+  height:50px;
+  line-height:55px;
+  font-size:18px;
+  right:0;
+  padding-right: 30rpx;
+  top:0;
+  margin-right:0;
+}
+.popupBox{
+  width: 750rpx;
+  height: 100%;
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 98;
+  display: flex;
+  align-items: center;
+}
+.blackBg{
+  background: #000;
+  opacity: .5;
+  width: 750rpx;
+  height:100%;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top:0;
+}
+.addBox{
+  position: relative;
+  margin-left:30rpx;
+  margin-right: 30rpx;
+  width: 690rpx;
+  padding:15px 30rpx 15px;
+  background: #fff;
+  box-sizing: border-box;
+  z-index: 100;
+  border-radius: 3px;
+}
+.tebie{
+  padding: 0;
+  position: relative;
+}
+.personTypeTxt{
+  display: inline-block;
+  width: 60px;
+  margin-left:5px;
+  margin-right:10px;
+}
+.default{
+  width: 86rpx;
+  height: 44rpx;
+  color: #fff;
+  border:1rpx solid #fc7f3b;
+  background: #fc8f53;
+}
+.inputBox{
+  padding-top: 30rpx;
+  height: 102rpx;
+  box-sizing: border-box;
+}
+.addBox input{
+  background: #fff;
+  padding: 10rpx 20rpx;
+  height: 72rpx;
+  line-height: 50rpx;
+  border:1rpx solid #e5e5e5;
+  box-sizing: border-box;
+}
+.addBox input:last-child{
+  margin-left: 10px;
+}
+
+.ageBox{
+  flex-wrap:wrap;
+  justify-content: space-between;
+}
+.age{
+  width: 90rpx;
+  text-align: center;
+  height: 32px;
+  line-height: 32px;
+  margin-right: 18rpx;
+  border:1rpx solid #e5e5e5;
+  background:#fff;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+.marginNone{
+  margin-right: 0;
+}
+.addBox text{
+  width: 100rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  box-sizing: border-box;
+  text-align: center;
+  border:1rpx solid #e5e5e5;
+}
+text.default{
+  border:1rpx solid #fc8f53;
+}
+
+.mgt-30{
+  margin-top: 30rpx;
+}
+.btnBox{
+  text-align: center;
+  padding-top: 30rpx;
+}
+.btnBox button{
+  width: 86px;
+  height: 36px;
+  line-height: 36px;
+  border:0;
+}
+.name{
+  display: block;
+  float: left;
+  width: 195rpx;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+}
+.short{
+  display: block;
+  float: left;
+  width: 90rpx;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 20rpx;
+  text-align: center;
+}
+.addBorder{
+  border: 1rpx solid #fff;
+}
+
+.close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size:16px;
+  margin-right:0;
+  width:44px;
+  height:44px;
+  line-height:50px;
+  text-align:center;
+  border-radius: 3px;
+}
+.appellation{
+  color: #666;
+}
+.selAge{
+  border-color:#fc8f53;
+  background: #fc8f53;
+  color: #fff;
+}
+
+.addBoxTitle{
+  height: 80rpx;
+  line-height: 50rpx;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  box-sizing: border-box;
+}
+.addBoxSex{
+  height: 96rpx;
+  padding-top: 30rpx;
+  box-sizing: border-box;
+}
+.ageTitle{
+  padding-top: 20rpx;
+}
+.roomNum{
+  display: inline-block;
+  width: 90rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  border:1rpx solid #e5e5e5;
+  text-align: center;
+  background: #fff;
+}
+.roomNum:first-child{
+  margin-right: 8px;
+}
+.selRoom{
+  border:1rpx solid #fc8f53;
+  color: #fff;
+  background: #fc8f53;
+}
+/*备注*/
+.item{
+  margin-top: 30rpx;
+  padding:30rpx;
+  background:#fff;
+  border-top: 1rpx solid #e5e5e5;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.bz-title{
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+.bz-checkbox{
+  display: block;
+  margin-top: 30rpx;
+}
+.bz-checkbox:first-child{
+  margin-top: 0;
+}
+.bz-secTip{
+  font-size: 12px;
+  color: #999;
+  margin-left: 20rpx;
+}
+textarea{
+  width: 100%;
+  border:1rpx solid #e5e5e5;
+  border-radius: 5px;
+  min-height: 200rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.bz-box{
+  position: relative;
+  padding:30rpx;
+  background:#fff;
+}
+.switch{
+  width: 87rpx;
+  height: 48rpx;
+  background: url('https://file.36dong.com/badazhou/weixinxcx/bg/switch.png?1437') no-repeat;
+}
+.on{
+  background-position: 0 -48rpx;
+  background-size: 100%;
+}
+.off{
+  background-position: 0 0;
+  background-size: 100%;
+}
+.tip{
+  padding: 20rpx 30rpx;
+  color: #888;
+  background:#fff7f3;
+}
+.mgt5{
+  margin-top: 5px;
+}
+/*抵店时间*/
+.arrivalTimeBox{
+  margin-top: 30rpx;
+}
+/*酒店集团卡*/
+
+.hotelCardTitle{
+  height: 25px;
+  line-height: 25px;
+  color: #b2b2b2;
+}
+.hotelCard{
+  margin-top: 30rpx;
+  height: 25px;
+  line-height: 25px;
+  position: relative;
+  padding: 20rpx;
+  border-radius: 5px;
+  border:1rpx solid #af9e78;
+  background:#fbf7ec;
+  color: #928464;
+}
+.controlCard{
+  position:absolute;
+  height:30px;
+  font-size:14px;
+  right:0;
+  top:0;
+  margin-right:0;
+  width:60rpx;
+  text-align:right;
+  padding-right:10rpx;
+}

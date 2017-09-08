@@ -1,0 +1,54 @@
+/* pages/hotel/bestPrice/bestPrice.wxss */
+.container {
+  padding: 0 30rpx;
+  background: #fff;
+}
+.title {
+  font-weight: bold;
+  color: #353535;
+  padding: 30rpx 0;
+}
+.circle {
+  margin-right: 5px;
+}
+.text {
+  color: #666;
+  line-height: 22px;
+  padding-bottom: 60rpx;
+}
+.mb-30 {
+  margin-bottom: 30rpx;
+}
+.mb-20 {
+  margin-bottom: 20rpx;
+}
+.pl-12 {
+  padding-left: 12px;
+}
+.c666{
+  color: #666;
+}
+.preferential{
+  display: inline-block;
+  color:#fc8f53;
+  font-size:12px;
+  margin:6rpx 3px 0;
+  height: 18px;
+  line-height: 18px;
+  border: 1rpx solid #fc8f53;
+  font-weight: 500;
+  padding-right: 2px;
+}
+.zhuanxiangImg{
+  width: 16px;
+  height: 18px;
+  padding-left:1px;
+  padding-right: 1px;
+  background:#fc8f53;
+  margin-right: 2px;
+  float: left;
+}
+.zhuanxiangImg image{
+  width: 16px;
+  height: 16px;
+}

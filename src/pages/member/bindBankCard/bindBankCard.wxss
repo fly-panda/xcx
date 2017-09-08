@@ -1,0 +1,143 @@
+@import "/pages/loading/loading-template.wxss";
+.box{
+  padding: 30rpx 0;
+  color: #888;
+  justify-content: center;
+  min-height: 400rpx;
+  background: #fff;
+}
+.loadingImg{
+  width: 30px;
+  height: 30px;
+}
+.prompting{
+  background: #f4f4f4;
+  color: #b2b2b2;
+  padding: 30rpx;
+  font-size: 13px;
+}
+.section{
+  padding: 0 30rpx 0;
+  background: #fff;
+  border-top:1rpx solid #e5e5e5;
+  border-bottom:1rpx solid #e5e5e5;
+}
+.view{
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.section > view:last-child{
+  border-bottom:none;
+}
+.formTag{
+  display: inline-block;
+  color:#b2b2b2;
+  width: 90px;
+  flex:none;
+}
+.view input{
+  height: 24px;
+  overflow: visible;
+  min-height: 0;
+  flex: 1;
+}
+
+.promptToast{
+  width:420rpx;
+  height:65px;
+  top:460rpx;
+  left: 26%;
+  line-height: 65px;
+  border-radius:10px;
+  background-color: rgb(114,113,113);
+  color:#ffffff;
+  font-size: 16px;
+  text-align: center;
+  position: fixed;
+  z-index: 100;
+  opacity: 0.85;
+}
+
+.validity{
+  position: relative;
+  height: 24px;
+}
+
+.placeholder{
+  position: absolute;
+  left: 90px;
+  top: 30rpx;
+  background: #fff;
+  color: #777;
+  padding-right: 60px;
+}
+
+.icon-shanchu {
+  font-size: 16px;
+  margin-right: 0;
+}
+.bankCardBox{
+  background: #fff;
+  padding: 30rpx 0;
+}
+.bankCard{
+  position: relative;
+  width: 690rpx;
+  height: 360rpx;
+  border-radius: 10px;
+  margin:0 auto;
+  color: #fff;
+  padding:30rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+.red{
+  background:#b74a4e;
+}
+.bankName{
+  font-size: 21px;
+  text-shadow: 2px 1px 1px #444;
+}
+.bankType{
+  font-size: 14px;
+}
+.bankLogo{
+  border-radius: 60rpx;
+  margin-right: 30rpx;
+  background: #fff;
+  width: 68rpx;
+  height: 68rpx;
+  padding-top: 10rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+.bankLogo image{
+  width: 48rpx;
+  height: 48rpx;
+}
+.bankCardNo{
+  padding-top: 50rpx;
+}
+.bankCardNo text{
+  display: inline-block;
+  padding-right: 30rpx;
+}
+.bankCardNo text:last-child{
+  padding-right: 0;
+  font-size: 21px;
+  text-shadow: 2px 1px 1px #444;
+}
+.editCard{
+  position:absolute;
+  right:20rpx;
+  bottom:20rpx;
+  width: 46rpx;
+  height: 46rpx;
+  text-align: center;
+  line-height: 46rpx;
+  border-radius: 100%;
+  color:#fc7f3b;
+  background: #fff;
+  font-size: 18px;
+  box-shadow: 1px 1px 1px #444;
+}

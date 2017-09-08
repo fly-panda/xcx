@@ -1,0 +1,49 @@
+<scroll-view scroll-y  style="height:{{scrollViewHight}}px" bindscrolltolower="onScrollLower" >
+  <block wx:if="{{orderList}}">
+    <view wx:for="{{orderList}}" class="bkItem" catchtap="detailPage" data-no="{{item.no}}">
+      <view class="itemBox flexRow between center">
+        <image src="https://file.36dong.com/badazhou/weixinxcx/bg/no.gif?1523" class="noBg"></image>
+        <view class="orderNo">
+          <text class="No">No</text>
+          {{item.no}}
+        </view>
+        <view class="totalPrice">
+          ￥<text class="totalPriceNum">{{item.price}}</text>
+        </view>
+      </view>
+
+      <view class=" flexRow between center itemTitle">
+        {{item.name}}
+      </view>
+      <view class="mainInfo">
+        <text>入住：{{item.checkinDate}}</text>
+        <text>离店：{{item.checkoutDate}}</text>
+        <text>{{item.stayDayNum}}晚</text>
+      </view>
+      <view class="otherInfo">
+        <text class="orderDate">{{item.createDateTime}}</text>
+
+        <text class="bkStatus waitting" wx:if="{{item.statusDetail.name == '预订失败' || item.statusDetail.name == '预订中'}}">
+          {{item.statusDetail.name}}
+        </text>
+        <text class="bkStatus success" wx:if="{{item.statusDetail.name == '预订成功'}}">
+          {{item.statusDetail.name}}
+        </text>
+        <text class="bkStatus cancel" wx:if="{{item.statusDetail.name == '系统取消' || item.statusDetail.name == '用户取消'}}">
+          {{item.statusDetail.name}}
+        </text>
+      </view>
+    </view>
+    <view class="more" wx:if="{{loading}}">显示更多酒店订单...</view>
+  </block>
+  <block wx:if="{{orderList == ''}}">
+    <view class="noOrder">
+      <view>您暂时还没有酒店订单~~</view>
+    </view>
+  </block>
+
+</scroll-view>
+
+
+
+

@@ -1,0 +1,147 @@
+.searchResult{
+  padding:15px 30rpx;
+}
+.arrow{
+  margin-top:2px;
+}
+.tag{
+  background: #fff;
+  font-size: 13px;
+}
+.area{
+  padding: 5px 20rpx;
+  height: 32px;
+  line-height: 32px;
+  flex:1;
+}
+.areaTxt{
+  padding-left: 10rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.date{
+  margin-right: 20rpx;
+  height: 32px;
+  padding:5px 20rpx;
+}
+.dateTag{
+  color: #b2b2b2;
+  padding-right: 10rpx;
+}
+.listItem{
+}
+.item{
+  background: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+  border-top: 1rpx solid #e5e5e5;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.headerImg{
+  width:60px;
+  height:60px;
+  flex: none;
+  border-radius:50px;
+}
+.info{
+  position: relative;
+  overflow: hidden;
+  margin-left: 40rpx;
+  flex: 1;
+}
+.name{
+  font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 30rpx;
+}
+.hotelBrand{
+  margin-right: 10rpx;
+  color: #b2b2b2;
+}
+.imgBox{
+  position: relative;
+  height: 60px;
+  width: 60px;
+}
+.preferential{
+  position: absolute;
+  color: #fff;
+  font-size: 12px;
+  background: url('https://file.36dong.com/badazhou/weixinxcx/bg/privilege.gif?1638') no-repeat;
+  background-size:78px 24px;
+  width: 80px;
+  height: 24px;
+  left: -9px;
+  bottom: 8px;
+  line-height: 16px;
+  text-align: center;
+}
+.price{
+  color: #fb5f0a;
+}
+.loadingPrice{
+  width: 16px;
+  height: 16px;
+}
+.noPrice{
+  position: absolute;
+  bottom:0;
+  right: 0;
+}
+.noPrice image{
+  width: 64rpx;
+  height: 64rpx;
+}
+.unit{
+  font-size: 12px;
+  padding-right: 5px;
+}
+.num{
+  font-size: 21px;
+  color: #fb5f0a;
+}
+.flexEnd{
+  justify-content: flex-end;
+}
+.brandCondition{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width:100%;
+  background:#fff;
+  line-height:50px;
+  text-align:center;
+  border-top: 1rpx solid #e5e5e5;
+}
+.brandCondition text{
+  vertical-align: middle;
+  display: inline-block;
+  height: 18px;
+  line-height: 18px;
+}
+text.icon-shaixuan{
+  font-size: 17px;
+  line-height: 22px;
+}
+.cNum{
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  color: #fff;
+  background: #fb5f0a;
+  border-radius: 18px;
+  font-size: 12px;
+  margin-left: 10rpx;
+}
+.more{
+  color: #888;
+  padding:30rpx;
+  text-align: center;
+}

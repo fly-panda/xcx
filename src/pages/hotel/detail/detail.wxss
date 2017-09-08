@@ -1,0 +1,406 @@
+@import "/pages/loading/loading-template.wxss";
+
+swiper{
+  height:450rpx;
+  position: relative;
+}
+.imgAllNum{
+  position: absolute;
+  width: 50px;
+  padding-left: 10px;
+  right: 0;
+  bottom: 10rpx;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  height: 30px;
+}
+.iconPhoto{
+  width: 20px;
+  height: 20px;
+}
+.imgBg{
+  position: absolute;
+  right: 0;
+  bottom: 20rpx;
+  width: 60px;
+  height: 30px;
+  background: #333;
+  opacity: .6;
+  z-index: 0;
+}
+.imgAllNum text{
+  padding-left: 5px;
+  line-height: 20px;
+}
+.slide-image{
+ width: 100%;
+ height: 450rpx;
+}
+.noneImage{
+  width: 750rpx;
+  height: 450rpx;
+}
+.detail{
+  padding:30rpx 30rpx 0;
+  background: #fff;
+  border-bottom:1rpx solid #e5e5e5;
+}
+.brandBox{
+  border-top:1rpx solid #e5e5e5;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+.brand{
+  padding:2px 5px;
+  border:1rpx solid #af9e78;
+  background: #fbf7ec;
+  color: #af9e78;
+  font-size: 14px;
+}
+.title{
+  padding-bottom:30rpx;
+}
+.en{
+  font-size: 16px;
+}
+.cn{
+  font-size: 20px;
+}
+.info{
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-top:1rpx solid #e5e5e5;
+}
+.tagTxt{
+  width: 90rpx;
+  padding-right: 24rpx;
+  box-sizing: border-box;
+}
+.address{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.address1{
+  width: 600rpx;
+}
+.address2{
+  width: 520rpx;
+}
+.priceTag{
+  color: #fb5f0a;
+  font-size: 12px;
+}
+.mgl15{
+  margin-left: 30rpx;
+}
+.mgr15{
+  margin-right: 30rpx;
+}
+.more{
+  justify-content: space-between;
+  align-items: center;
+}
+.booking{
+  margin-top: 30rpx;
+}
+.dateInfo{
+  background: #fff;
+  padding: 30rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.itemDateInfo{
+  font-size: 13px;
+  padding: 30rpx;
+  background: #fff;
+  border-top: 1rpx solid #dedad0;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.dateNum{
+  font-size: 16px;
+}
+.daysInfo{
+  position: relative;
+  font-size: 12px;
+  width: 30px;
+  height: 39px;
+  text-align: center;
+  line-height: 39px;
+}
+.days{
+  position: relative;
+  z-index: 2;
+  padding: 5px 0;
+  background: #fff;
+}
+.line{
+  position: absolute;
+  left: 14px;
+  top:0;
+  width: 1px;
+  background: #e5e5e5;
+  height: 39px;
+  z-index: 0;
+}
+.roomItem{
+  background: #fff;
+  border-top: 1rpx solid #e5e5e5;
+  margin-bottom: 30rpx;
+}
+.roomItem:first-child{
+  border-top: none;
+}
+.room{
+  padding:0 30rpx 30rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.icon{
+  width: 24px;
+  height: 24px;
+  margin-right:10px;
+  flex:none;
+}
+.bedType{
+ color: #888;
+}
+.contain text{
+  display:block;
+  color: #888;
+}
+.roomType{
+  padding-top: 30rpx;
+  padding-right: 30rpx;
+  font-size: 16px;
+}
+.roomTypeShort{
+  padding-top: 30rpx;
+  padding-right: 30rpx;
+  font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.priceNum{
+  font-size: 19px;
+  color: #fb5f0a;
+}
+.priceNumMid{
+  font-size: 18px;
+  color: #fb5f0a;
+}
+.allRoomPrice{
+  background: #fbfbfb;
+  padding:0 30rpx;
+}
+.roomPrice{
+  padding:30rpx 0;
+  border-top: 1rpx solid #e5e5e5;
+}
+.plan{
+  display: inline-block;
+  width: 405rpx;
+  padding-right: 30rpx;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+.planPrice{
+  display: inline-block;
+  width:170rpx;
+  padding-right: 30rpx;
+  vertical-align: middle;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.planTxt{
+  width: 370rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.bookingBtn{
+  display: inline-block;
+  text-align: center;
+  width: 115rpx;
+  height: 42px;
+  border:1rpx solid #fc8f53;
+  border-radius: 5px;
+  background: #fff;
+  vertical-align: middle;
+}
+.roomPrice:first-child{
+  border-top: none;
+}
+.bookingInfo{
+  padding-left: 30rpx;
+  justify-content: flex-end;
+}
+.preferential{
+  display: inline-block;
+  color:#fc8f53;
+  font-size:12px;
+  margin:6rpx auto 0;
+  height: 18px;
+  line-height: 18px;
+  border: 1rpx solid #fc8f53;
+}
+.zhuanxiangImg{
+  width: 16px;
+  height: 18px;
+  padding-left:1px;
+  padding-right: 1px;
+  background:#fc8f53;
+  margin-right: 2px;
+  float: left;
+}
+.zhuanxiangImg image{
+  width: 16px;
+  height: 16px;
+}
+.roomAttr{
+  margin-top: 10rpx;
+  font-size: 12px;
+}
+.roomAttrItem{
+  padding-left: 8px;
+  border-left: 1rpx solid #e5e5e5;
+  margin-left: 8px;
+}
+.roomAttrItem:first-child{
+  padding-left: 0;
+  margin-left: 0;
+  border-left: none;
+}
+.cancelInfoShortTran{
+  border-left: 1rpx solid #e5e5e5;
+  margin-left: 10rpx;
+  padding-left: 10rpx;
+}
+.bookingTxt{
+  display: block;
+  background: #fc8f53;
+  height: 24px;
+  line-height: 24px;
+  color: #fff;
+  border-radius: 5px 5px 0 0;
+}
+.qd1{
+  border:1rpx solid #fb5f0a;
+}
+.qd2{
+  background: #fb5f0a;
+}
+.guaranteeTypeTxt{
+  display: block;
+  height: 12px;
+  font-size: 12px;
+  color: #fc8f53;
+  margin-top: 2px;
+}
+.roomPriceTip{
+  padding:20rpx;
+  background: #f4f4f4;
+  font-size: 12px;
+  color: #fc8f53;
+  text-align: right;
+}
+.priceLoading{
+  text-align: center;
+  background: #fff;
+  padding:30rpx;
+  height: 30px;
+  justify-content: center;
+  height: 200rpx;
+}
+.loadingImg{
+  width: 30px;
+  height: 30px;
+}
+.loadingTxt{
+  height: 30px;
+  line-height:30px;
+  padding-left: 20rpx;
+  color: #b2b2b2;
+}
+.suit{
+  display: inline-block;
+  padding:4rpx;
+  color:#fc8f53;
+  font-size:12px;
+  border:1rpx solid #fc8f53;
+  background:#fff;
+}
+.mgl3{
+  margin-right: 3px;
+}
+.stress{
+  background:#fc8f53;
+  color:#fff;
+}
+.baseLine{
+  align-items: baseline;
+  padding-top: 20rpx;
+}
+.icon-xiangxiajiantou{
+  margin-left: 10rpx;
+}
+.icon-xiangshangjiantou{
+  margin-left: 10rpx;
+}
+.noPrice{
+  padding:30rpx;
+  background: #fff;
+  color: #b2b2b2;
+  height: 200rpx;
+}
+.noPrice text{
+  display: block;
+  text-align: center;
+}
+.contactBox{
+  padding:0 30rpx 30rpx;
+}
+.contactBox view{
+  height: 24px;
+  line-height: 24px;
+  flex: 1;
+  background: #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+.kefu{
+  position:relative;
+  display:flex;
+  margin-left:0;
+  margin-right:20rpx;
+  padding-left:0;
+  padding-right:0;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  box-sizing:border-box;
+  font-size:14px;
+  text-align:center;
+  text-decoration:none;
+  line-height:24px;
+  border-radius:0;
+  -webkit-tap-highlight-color:transparent;
+  overflow:hidden;
+  color:#333;
+  background-color:#fff;
+  flex: 1;
+  justify-content: center;
+  border: 1rpx solid #e5e5e5;
+}
+.kefu::after{
+  border:0;
+}
+.tel{
+  border: 1rpx solid #e5e5e5;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

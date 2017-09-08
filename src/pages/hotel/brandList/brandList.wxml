@@ -1,0 +1,28 @@
+<import src="/pages/showModal/showModal-template.wxml"/>
+<template is="showModal" data="{{...showModalData}}"/>
+
+
+<view class="container">
+  <view class="tip flexRow between">
+    <view>
+      <text class="privilege iconfont icon-huangguan"></text>表示该品牌提供专属优待。
+    </view>
+    <view class="privilegeInfo" catchtap="privilegeInfo">优待详情</view>
+  </view>
+
+  <scroll-view class="brandList" scroll-y style="height:{{scrollViewHight}}px">
+    <view class="brandBox flexRow">
+
+      <view wx:for="{{brandList}}" class="brand {{(index + 1) % 3 == 0 ? 'marginNone' : ''}} {{item.checked ? 'checked' : ''}}" data-index="{{index}}" catchtap="selectSingleBrand">
+        <view class="name">{{item.name}}</view>
+        <view class="name"><text class="privilege iconfont icon-huangguan" wx:if="{{item.isExclusive == 1}}"></text>{{item.nameCn}}</view>
+      </view>
+
+    </view>
+
+  </scroll-view>
+  <view class="brandBtnWrap">
+    <button class="btn btnPrimary " hover-class="press" catchtap="confirmBrands">确定</button>
+  </view>
+
+</view>

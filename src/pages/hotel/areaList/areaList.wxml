@@ -1,0 +1,28 @@
+<view>
+  <view class="searchBarBox">
+    <view class="searchBar flexRow">
+      <text class="iconfont icon-sousuo"></text>
+      <input type="text" placeholder="城市英文/拼音/中文" value="" bindinput="selectSearchTxt" />
+    </view>
+  </view>
+  <view class="hotCityList" wx:if="{{hotCityListShow}}">
+    <view class="itemTilte flexRow between center">
+      <view>热门城市</view>
+      <text class="tip txtLight">向右滑动选择更多区域</text>
+    </view>
+    <scroll-view class="mainArea" scroll-x="true">
+      <view class="{{item.selected ? 'selected' : ''}}" wx:for="{{hotArea}}" catchtap="relateArea" data-index="{{index}}">
+        <text class="area {{index == 0 ? 'borderNone' : '' }}">{{item.typeName}}</text>
+      </view>
+    </scroll-view>
+    <view class="hotCity clear">
+      <view wx:for="{{hotCityList.list}}" data-area="{{item}}" class="city {{(index + 1) % 4 == 0 ? 'marginNone' : ''}}" catchtap="selectArea">{{item.nameCn}}</view>
+    </view>
+  </view>
+
+  <scroll-view scroll-y class="keywordRelated flexColumn" style="height:{{keywordRelatedHeight}}px"  wx:if="{{keywordRelatedShow}}">
+    <block wx:for="{{areaList}}" wx:for-item="area">
+      <text catchtap="selectArea" data-area="{{area}}" >{{area.countryCityNameCn}}</text>
+    </block>
+  </scroll-view>
+</view>

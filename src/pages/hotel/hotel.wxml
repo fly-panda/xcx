@@ -1,0 +1,4 @@
+<button bindtap="openCal">打开日历</button>
+
+入住{{checkinDate}}
+退房{{checkoutDate}}

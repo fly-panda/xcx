@@ -1,0 +1,24 @@
+.item{
+  padding: 30rpx;
+  background: #fff;
+  margin-bottom: 30rpx;
+}
+.title{
+  font-weight: 600;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.content{
+  margin-top: 10rpx;
+}
+.content view{
+  margin-top: 20rpx;
+  color: #888;
+}
+.dot{
+  width: 5px;
+  flex:none;
+  font-weight: 600;
+  color: #928464;
+  margin-right: 10rpx;
+}

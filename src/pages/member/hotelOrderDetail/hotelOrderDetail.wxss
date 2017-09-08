@@ -1,0 +1,263 @@
+@import "../../loading/loading-template.wxss";
+
+.wrap{
+  padding-bottom: 45px;
+}
+
+.box{
+  margin-top: 30rpx;
+  padding:30rpx;
+  background: #fff;
+  border-top: 1rpx solid #e5e5e5;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.orderStatus{
+  margin-top: 0;
+  border-top: none;
+}
+.msg{
+  padding-top: 20rpx;
+  font-size: 12px;
+  color: #f39c12;
+}
+.orderTotalPrice{
+  padding: 30rpx;
+  background: #fff;
+  margin-top: 30rpx;
+  border-top: 1rpx solid #e5e5e5;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.view{
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-top: 1rpx solid #e5e5e5;
+}
+.view:first-child{
+  border-top: none;
+  padding-top: 0;
+}
+.view:last-child{
+  padding-bottom: 0;
+}
+.totalNum{
+  font-size: 16px;
+  color: #fb5f0a;
+  font-weight: 600;
+}
+.code{
+  font-size: 14px;
+  color: #fb5f0a;
+}
+.hotelInfo{
+  padding-top: 30rpx;
+  padding-bottom:30rpx;
+  border-bottom: 1rpx dashed #e5e5e5;
+}
+.info{
+  margin-top: 10rpx;
+}
+.secTitle{
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  font-weight: 600;
+}
+.stress{
+  color: #fc8f53;
+}
+.userInfo view{
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.userInfo view:first-child{
+  padding-top: 0;
+}
+.userInfo view:last-child{
+  border-bottom: none;
+  padding-bottom:0;
+}
+.tag{
+  width: 70px;
+  color: #b2b2b2;
+  flex: none;
+}
+.waitting{
+  color: #f39c12;
+}
+.error{
+  color: #d91616;
+}
+.success{
+  color: #2ecc71;
+}
+.cancel{
+  color: #b2b2b2;
+}
+.box:last-child{
+margin-bottom: 30rpx;
+}
+.confirmNo{
+  font-weight: 600;
+  color: #fc8f53;
+}
+.addr{
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom :0;
+}
+.txt{
+  flex:none;
+  width: 45px;
+}
+.itemBox{
+  color: #888888;
+}
+.itemBox:last-child{
+  margin-bottom: 30rpx;
+}
+.itemBoxTitle{
+  padding:30rpx;
+  background: #f4f4f4;
+  color: #353535;
+}
+.itemBoxTip{
+  color: #b2b2b2;
+  font-size: 12px;
+  margin-top:20rpx;
+  padding-left:30rpx;
+}
+.stress{
+  color: #fc8f53;
+  font-weight: 600;
+}
+.itemBoxContent{
+  padding: 30rpx;
+  background: #ffffff;
+  border-top:1rpx solid #e5e5e5;
+  border-bottom:1rpx solid #e5e5e5;
+}
+.item{
+  padding-top:20rpx;
+  display: flex;
+}
+.item:first-child{
+  padding-top: 0;
+}
+.dot{
+  width: 5px;
+  flex:none;
+  font-weight: 600;
+  color: #928464;
+  margin-right: 10rpx;
+}
+.hotel{
+  position: relative;
+}
+.hotelBar{
+  position: absolute;
+  left:0;
+  width: 750rpx;
+  height: 8rpx;
+}
+.top{
+  top: 0;
+}
+.bottom{
+  bottom: 0;
+}
+view.personList{
+  padding-top: 0;
+}
+view.personList view{
+border-bottom: none;
+padding-bottom: 0;
+padding-top: 0;
+}
+.contactBox{
+  width: 750rpx;
+  border-top: 1rpx solid #e5e5e5;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background:#fff;
+}
+.contactBox view{
+  height: 24px;
+  line-height: 24px;
+  flex: 1;
+  text-align: center;
+  vertical-align: middle;
+}
+.kefu{
+  position:relative;
+  display:flex;
+  margin-left:0;
+  margin-right:0;
+  padding-left:0;
+  padding-right:0;
+  box-sizing:border-box;
+  font-size:14px;
+  text-align:center;
+  text-decoration:none;
+  line-height:24px;
+  border-radius:0;
+  -webkit-tap-highlight-color:transparent;
+  overflow:hidden;
+  color:#333;
+  background-color:#fff;
+  flex: 1;
+  justify-content: center;
+  border-right: 1rpx solid #e5e5e5;
+}
+.kefu::after{
+  border:0;
+}
+.tel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+view.roomType{
+  padding-top: 0;
+  border-bottom: 0;
+}
+view.contain{
+  border-bottom: 0;
+}
+.contain text{
+  margin-left: 10rpx;
+  margin-right:10rpx;
+  border:1rpx solid #e5e5e5;
+  padding:3px 5px;
+  font-size:12px;
+  background: #f8f8f8;
+  color: #928464;
+}
+.contain text:first-child{
+  margin-left: 0;
+}
+.contain text:last-child{
+  margin-right: 0;
+}
+.cancelInfoShort{
+color: #fc8f53;
+}
+.prefixDetail{
+  font-size: 12px;
+  padding-right: 10rpx;
+}
+.addCard{
+  display: inline-block;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #fb5f0a;
+
+}
+.cardTip{
+  display:block;
+  font-size: 12px;
+  color: #b2b2b2;
+  line-height: 22px;
+}

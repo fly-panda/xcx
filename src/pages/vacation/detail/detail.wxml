@@ -1,0 +1,229 @@
+<import src="/pages/loading/loading-template.wxml" />
+<!-- 页面加载状态 -->
+<block  wx:if="{{loadingPage}}">
+  <template is="loading" data="{{loadingTxt}}"/>
+</block>
+
+<block wx:else>
+
+  <view class="container">
+    <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="{{ indicatorActive }}" indicator-color="{{ indicatorColor }}">
+      <block wx:for="{{imgUrls}}" >
+        <swiper-item>
+          <image src="{{item}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+      <view class="flexRow imgAllNum" catchtap="allPhotoPage">
+          <image src="/images/icon/icon-photo.png" class="iconPhoto"></image>
+          <text>{{imageArrNum}}</text>
+      </view>
+      <view class="imgBg"></view>
+<!--       <view class="routeNumber">
+        编号：<text selectable="true">FND878702</text>
+      </view> -->
+    </swiper>
+
+
+    <view class="info">
+      <view class="title">
+        <view class="tag">自由行</view>摩洛哥马拉喀什Amanjena+法国巴黎7晚9天
+      </view>
+      <view class="price-number flexRow">
+        <view class="price">
+          <text class="unit">￥</text>
+          <text class="num">16888</text>
+          <text class="unit">/人起</text>
+        </view>
+        <view class="number">
+          编号：<text selectable="true">FND878702</text>
+        </view>
+      </view>
+      <view class="tip">
+        *此行程为6人精品小团，如果低于6人，请咨询我们的度假顾问。
+      </view>
+    </view>
+
+    <view class="route">
+      <view class="h2">行程介绍</view>
+
+      <view class="list">
+        <view class="wrap">
+          <view class="day flexRow">
+            <view class="day-number">
+              <view>
+                D1
+              </view>
+            </view>
+            <view class="city">
+              北京-曼谷-沽岛soneva kiri
+            </view>
+          </view>
+          <view class="content">
+            <view class="route-list">
+
+              <view class="item">
+                <view class="icon">
+                  <view class="iconfont icon-hangban"></view>
+                </view>
+                <view class="h5">
+                  交通信息
+                </view>
+
+
+                <view class="textBox">
+                  航班：
+
+                </view>
+              </view>
+
+              <view class="item">
+                <view class="icon">
+                  <view class="iconfont icon-hotel"></view>
+                </view>
+                <view class="h5">
+                  入住酒店
+                </view>
+                <view class="textBox">
+                  Hilton Surfers Paradise Hotel
+                </view>
+              </view>
+
+              <view class="item">
+                <view class="icon">
+                  <view class="iconfont icon-canyinmeishi"></view>
+                </view>
+                <view class="textBox">
+                  餐食：早餐
+                </view>
+              </view>
+              <view class="item">
+                <view class="icon">
+                  <view class="iconfont icon-hongqi"></view>
+                </view>
+                <view class="textBox">
+                  自行前往浦东国际机场，办理登机手续，搭乘毛里求斯航空飞往印度洋的岛国-毛里求斯 ，夜宿飞机上。飞机上。飞机上。
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="wrap">
+          <view class="day flexRow">
+            <view class="day-number">
+              <view>
+                D2
+              </view>
+            </view>
+            <view class="city">
+              北京-曼谷-沽岛soneva kiri
+            </view>
+          </view>
+          <view class="content">
+            <view class="route-list">
+
+              <view class="item">
+                <view class="icon">
+                  <view class="iconfont icon-hangban"></view>
+                </view>
+                <view class="h5">
+                  交通信息
+                </view>
+
+
+                <view class="textBox">
+                  航班：
+
+                </view>
+              </view>
+
+              <view class="item">
+                <view class="icon">
+                  <view class="iconfont icon-hotel"></view>
+                </view>
+                <view class="h5">
+                  入住酒店
+                </view>
+                <view class="textBox">
+                  Hilton Surfers Paradise Hotel
+                </view>
+              </view>
+
+              <view class="item">
+                <view class="icon">
+                  <view class="iconfont icon-canyinmeishi"></view>
+                </view>
+                <view class="textBox">
+                  餐食：早餐
+                </view>
+              </view>
+              <view class="item" style="border:none;">
+                <view class="icon">
+                  <view class="iconfont icon-hongqi"></view>
+                </view>
+                <view class="textBox">
+                  自行前往浦东国际机场，办理登机手续，搭乘毛里求斯航空飞往印度洋的岛国-毛里求斯 ，夜宿飞机上。机上。机上。
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="detailBtn flexRow" hover-class="press" bindtap="routeDetail">
+        <view>查看图文详情</view>
+        <text class="arrow iconfont icon-xiangyoujiantou"></text>
+      </view>
+    </view>
+
+    <view class="tourHighlights">
+
+      <view class="h2">行程亮点</view>
+      <view class="content">
+        <text>1、首尔四季酒店，位于黄金地段，光化门广场地区最具风格的新地标；交通方便，你想要的观光、购物、美食，这里---都有!
+          2、首尔四季酒店，位于黄金地段，光化门广场地区最具风格的新地标；交通方便，你想要的观光、购物、美食，这里---都有！
+        </text>
+      </view>
+      <view class="detailBtn flexRow" hover-class="press">
+        <view>查看全部</view>
+        <text class="arrow iconfont icon-xiangyoujiantou"></text>
+      </view>
+    </view>
+
+
+    <view class="flexRow item" hover-class="press">
+      <view>
+        价格说明
+      </view>
+      <text class="arrow iconfont icon-xiangyoujiantou"></text>
+    </view>
+    <view class="flexRow item" hover-class="press">
+      <view>
+        签证须知
+      </view>
+      <text class="arrow iconfont icon-xiangyoujiantou"></text>
+    </view>
+    <view class="flexRow item" hover-class="press">
+      <view>
+        预订须知
+      </view>
+      <text class="arrow iconfont icon-xiangyoujiantou"></text>
+    </view>
+
+    <view class="footer flexRow">
+      <view class="footer-item" catchtap="makePhoneCall" hover-class="press">
+        <text class="iconfont icon-tel"></text><text>电话咨询</text>
+      </view>
+      <view class="line"></view>
+      <view class="kefu" hover-class="press">
+        <button  open-type="contact">
+          <view>
+            <text class="iconfont icon-icon052"></text>
+            <text>在线客服</text>
+          </view>
+        </button>
+      </view>
+    </view>
+  </view>
+
+</block>
+

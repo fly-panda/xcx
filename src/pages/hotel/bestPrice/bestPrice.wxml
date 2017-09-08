@@ -1,0 +1,111 @@
+<!--pages/hotel/bestPrice/bestPrice.wxml-->
+<view class="container">
+  <view class="item">
+    <view class="title">
+      <view class="preferential"><view class="zhuanxiangImg"><image src="/images/icon/zhuanxiang.png" ></image></view>专享价</view>八大洲旅游低价保证
+    </view>
+    <view class="text">
+      八大洲竭诚为您提供“八大洲专享价低价保证”。如果您已经通过八大洲预订酒店专享价房型，但在订房后向我们提供有效证据，证明您的确可以在另外一个网站以更低的价格搜索并预订到同样日期的同样优待的同样房型，在此情况下，我们将为您提供相同的价格或甚至更便宜的价格。
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">提交补偿申请</view>
+    <view class="mb-30 c666">
+      请先准备好以下材料，然后发送邮件至website@8continents.cn，我们会在三个工作日内回复您。
+    </view>
+    <view class="text">
+      <view class="flexRow">
+        <text class="circle">•</text>您的八大洲订单编号
+      </view>
+      <view class="flexRow">
+        <text class="circle">•</text>请提供您找到更低价格的网站网址
+      </view>
+      <view class="flexRow">
+        <text class="circle">•</text>酒店名称，所在城市及国家
+      </view>
+      <view class="flexRow">
+        <text class="circle">•</text>提供三份对方网站的屏幕截图，截图上需清楚显示在您预订的日期的酒店空房、房型、促销类型、房价等必要信息
+      </view>
+      <view class="flexRow">
+        <text class="circle">•</text>请注意：您无需在对方网站预订酒店，只需要向我们出示对比价格即可
+      </view>
+    </view>
+  </view>
+  <view class="item">
+    <view class="title">
+      条款与条例
+    </view>
+    <view class="text">
+      1. 为能成功地申请补偿，您必须向我们提供您的八大洲预订账号。
+    </view>
+    <view class="mb-20 c666">
+      2. 补偿申请必须符合以下条例：
+    </view>
+    <view class="text">
+      <view class="flexRow">
+        <text class="circle">•</text>相同的酒店
+      </view>
+      <view class="flexRow">
+        <text class="circle">•</text>相同的入住时间
+      </view>
+      <view class="flexRow">
+        <text class="circle">•</text>相同的房型/床型
+      </view>
+      <view class="flexRow">
+        <text class="circle">•</text>相同的提前预订、付款和押金要求（若有）
+      </view>
+      <view class="flexRow">
+        <text class="circle">•</text>相同的取消和修改政策
+      </view>
+      <view class="flexRow">
+        <text class="circle">•</text>当我们的客房服务专员在查询空房情况时，对方网站必须能够即时确认订房
+      </view>
+    </view>
+    <view class="mb-30 c666">
+      3. “八大洲专享价低价保证”不适用于涉及第三方回馈项目(如PointMAX)的预订，或者未向公众开放的价格，例如：
+    </view>
+    <view class="text">
+      <view class="flexRow">
+        <text class="circle">•</text>私人价格（内部价格）
+      </view>
+      <view class="flexRow">
+        <text class="circle">•</text>团队价或促销价
+      </view>
+      <view class="flexRow">
+        <text class="circle">•</text>包括在团队游中的酒店客房价
+      </view>
+      <view class="flexRow mb-20">
+        <text class="circle">•</text>不适用于公众的价格包括：
+      </view>
+      <view class="pl-12">
+        <view>
+          - 公司折扣价
+        </view>
+        <view>
+          - 团队价或会议价
+        </view>
+        <view>
+          - 任意一种会员价格（例如：AARP价或AAA价）
+        </view>
+        <view>
+          - 忠诚客户奖励计划价格
+        </view>
+        <view>
+          - 任何专为单独的独特团队所提供，且不面向公众推出的价格
+        </view>
+      </view>
+    </view>
+    <view class="text">
+      4. 八大洲有权并可酌情确认任何补偿的有效性，包括但不限于，决定是否是相同的酒店、客房类型、日期，且其是否符合所有的条款、条列，以及补偿所要求的条件。
+    </view>
+    <view class="text">
+      5. 我们的“八大洲专享价低价保证”不能与其他优惠价格或促销活动共同使用。
+    </view>
+    <view class="text">
+      6. 八大洲有权在任何时间修订、修改、补充、暂停或终止“八大洲专享价低价保证”。另外，八大洲保留暂停任何在 “八大洲专享价低价保证”政策下确认的订单的八大洲回馈积分活动的权利。
+    </view>
+    <view class="text">
+      若有任何关于补偿申请的问题，请直接与我们的客服中心联系。
+    </view>
+  </view>
+</view>

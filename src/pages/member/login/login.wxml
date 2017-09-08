@@ -1,0 +1,18 @@
+<view class="loginWrap">
+  <text class="caution">短信验证码登录，如未注册，验证后将自动注册</text>
+  <view class="loginContent">
+
+    <view class="item">
+      <label for="phone">手机号</label>
+      <input class="input" id="phone" type="number" value=''  bindinput="phoneChange" focus="{{phoneFocus}}"/>
+    </view>
+    <view class="item">
+      <label for="identifyCode">验证码</label>
+      <input class="input code" id="identifyCode" type="number" focus="{{codeFocus}}" value=''  bindinput="identifyCodeChange" />
+      <button size="mini" class="{{ status ? 'btnSecond' : 'btnSecond disable'}}" hover-class="press" bindtap="getCode" >{{txtMsg}}</button>
+    </view>
+  </view>
+</view>
+<view class="promptToast" hidden="{{nullHouse}}">{{alertMsg}}</view>
+
+<button class="{{type ? 'btn largeBtn btnPrimary' : 'btn largeBtn btnPrimary disable'}}" hover-class="press" bindtap="submit">登录</button>

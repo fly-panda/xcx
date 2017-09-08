@@ -1,0 +1,64 @@
+<import src="/pages/showToast/showToast-template.wxml"/>
+<template is="showToast" data="{{...showToastData}}"/>
+
+<view class="container">
+  <view class="titleBox flexRow center between">
+    <view class="">我的酒店集团会员卡</view>
+    <view class="add  flexRow center" catchtap="showModal">
+      <text class="iconfont icon-tianjia"></text>添加
+    </view>
+  </view>
+
+  <block wx:if="{{loading}}">
+    <view class="box flexRow center">
+      <image class="loadingImg" src="/images/icon/loading.gif"></image>
+      正在加载您的酒店集团会员卡信息...
+    </view>
+  </block>
+
+  <block wx:if="{{!loading}}">
+    <view class="cardItem" wx:if="{{cardList.length}}" wx:for="{{cardList}}">
+      <view class="card flexCloumn center">
+        <view class="cardName" wx:if="{{item.typeDetail.id == 0}}">{{item.name}}</view>
+        <view class="cardName" wx:else>{{item.typeDetail.value}}</view>
+        <view class="cardNo"><text>NO. </text>{{item.no}}</view>
+      </view>
+      <view class="delectBox" catchtap="delect" data-id="{{item.id}}">
+        <text class="iconfont icon-guanbi"></text>
+      </view>
+      <view class="selCard" catchtap="selCard" data-index="{{index}}">选择此卡</view>
+    </view>
+
+    <view class="box" wx:if="{{!cardList.length}}">您当前还没有添加酒店集团会员卡~~</view>
+  </block>
+
+</view>
+
+<!-- 添加酒店集团卡 -->
+<view class="popupBox" wx:if="{{isAddCard}}">
+  <view class="blackBg"></view>
+  <view class="addBox" >
+    <view class="close iconfont icon-guanbi" catchtap="hideModal"></view>
+    <view class="addBoxTitle">添加酒店集团卡</view>
+    <view class="clear">
+      <view class="cardType {{(index+1) % 2 == 0 ? 'marginNone' : ''}} {{item.id == selType.id ? 'select' : ''}}" wx:for="{{cardType}}" data-name="{{item.value}}" data-index="{{index}}" catchtap="selCardType" >
+        {{item.value}}
+      </view>
+    </view>
+
+    <view class="inputBox flexRow center"  wx:if="{{selType && selType.id == '0'}}">
+      <text class="tag">名称</text><input  type="text" bindinput="cardName" />
+    </view>
+
+    <view class="inputBox flexRow center">
+      <text class="tag">卡号</text><input value="{{cardNumber}}" type="number" bindinput="formatCardNumber" />
+    </view>
+
+
+    <view class="btnBox">
+        <button class="eBtn btnPrimary" wx:if="{{showSubmit}}" catchtap="add">添加</button>
+        <button class="eBtn btnPrimary" wx:if="{{isSubmit}}">提交中</button>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,49 @@
+
+.title{
+  padding: 30rpx;
+  font-size: 16px;
+}
+.content{
+  background: #fff;
+  padding:30rpx;
+  border-top: 1rpx solid #e5e5e5;
+  border-bottom: 1rpx solid #e5e5e5;
+  color: #888;
+  position: relative;
+}
+.content view{
+  padding-top:30rpx;
+}
+.content view:first-child{
+  padding-top:0;
+}
+.wrap{
+  margin-bottom: 30rpx;
+}
+.phone{
+  color: #fc8f53;
+}
+.tag{
+  display: inline-block;
+  margin-right: 10px;
+}
+.addr{
+  flex:none;
+}
+.icon-fanyi{
+  font-size: 20px;
+  margin-right: 0px;
+  color: #928464;
+}
+.translateCn{
+  position: absolute;
+  bottom: 5rpx;
+  right: 0rpx;
+  padding:20rpx;
+}
+.itemTran{
+  margin-top: 20rpx;
+  padding: 20rpx;
+  background: #f9f9f9;
+  line-height:21px;
+}

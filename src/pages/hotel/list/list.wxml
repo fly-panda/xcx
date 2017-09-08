@@ -1,0 +1,62 @@
+<view>
+  <view class="searchResult flexRow">
+    <view class="tag flexColumn date" catchtap="selectDate">
+      <view class="flexRow">
+        <text class="dateTag">入住</text>
+        <text>{{checkinTxt}}</text>
+      </view>
+      <view class="flexRow">
+        <text class="dateTag">离店</text>
+        <text>{{checkoutTxt}}</text>
+      </view>
+    </view>
+    <view class="area tag flexRow between center" catchtap="selectArea">
+      <view>
+        <text class="arrow iconfont icon-sousuo"></text>
+        <text class="areaTxt">{{area.nameCn}}</text>
+      </view>
+      <text class="arrow iconfont icon-xiangyoujiantou"></text>
+    </view>
+  </view>
+
+  <scroll-view class="listItem" scroll-y style="height:{{scrollViewHight}}px" bindscrolltolower="onScrollLower" scroll-top="{{scrollTop}}">
+
+    <block wx:for="{{hotelList}}">
+      <view class="item flexRow" catchtap="hotelDetail" data-no="{{item.no}}" data-name="{{item.nameCn != '' ? item.nameCn : item.name}}">
+        <view class="imgBox">
+          <image class="headerImg" src="/images/hotel/noneImage.jpg" wx:if="{{item.mainImage == ''}}"></image>
+          <image class="headerImg" src="{{item.mainImage}}-w/120/h/120" wx:else></image>
+          <text class="preferential" wx:if="{{item.brandRes.isExclusive == 1}}">专享优待</text>
+        </view>
+
+        <view class="info">
+          <view class="name">{{item.nameCn != '' ? item.nameCn : item.name}}</view>
+          <view class="flexRow between center">
+            <view class="flexRow center">
+              <view class="hotelBrand">{{item.brandRes.nameCn}}</view>
+
+            </view>
+            <view wx:if="{{item.priceLoading}}" class="flexRow center">
+              <image class="loadingPrice" src="/images/icon/loading.gif"></image>
+              <text class="txtLight">价格加载中</text>
+            </view>
+            <view wx:elif="{{item.notAvaliable}}" class="noPrice">
+              <image src="/images/icon/icon-soldOut.png" ></image>
+            </view>
+            <view class="price" wx:else>
+              <text class="unit">￥</text>
+              <text class="num">{{item.cnyMinAmount}}</text>
+              <text class="unit">/晚起</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="more" wx:if="{{loading}}">加载更多酒店...</view>
+
+  </scroll-view>
+
+  <view class="brandCondition" catchtap="selectBrand">
+      <text class="iconfont icon-shaixuan"></text><text>品牌筛选</text><text class="cNum" wx:if="{{selBrandList.length}}">{{selBrandList.length}}</text>
+  </view>
+</view>

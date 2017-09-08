@@ -1,0 +1,211 @@
+<import src="/pages/showModal/showModal-template.wxml"/>
+
+<template is="showModal" data="{{...showModalData}}"/>
+
+<view class="roomInfo">
+  <view class="roomType">
+      {{rateRoom}}
+  </view>
+  <view class="flexRow dateInfo">
+    <text><text class="txtLight">入住 </text>{{checkinTxt}}</text>
+    <text><text class="txtLight">离店 </text>{{checkoutTxt}}</text>
+    <text>{{days}}晚</text>
+  </view>
+</view>
+<form bindsubmit="formSubmit">
+  <view class="userInfo">
+      <view class="formAreaTitle">联系人信息</view>
+      <view class="section">
+        <view class="view flexRow">
+          <view class="codeBox flexRow center">
+            <picker class="codePicker" name="phoneAreaCode" bindchange="areaCodesPickerChange" value="{{areaCodeIndex}}" range="{{areaCodesArray}}">
+              <view class="picker">
+                {{areaCodesArray[areaCodeIndex]}}
+              </view>
+            </picker>
+            <text class="arrow iconfont icon-xiangxiajiantou"></text>
+          </view>
+          <view wx:if="{{isOtherCode}}" class="flexRow otherCode center">
+            + <input placeholder="区号" type="number" name="otherAreaCode"  />
+          </view>
+          <input placeholder="请输入手机号码" type="number" value="{{phone}}" name="phone"/>
+        </view>
+      </view>
+
+      <view class="rp flexRow center between">
+        <view class="flexRow center" catchtap="roomTip">
+          房间及入住人信息
+          <text class="iconfont icon-info shuoming"></text>
+        </view>
+        <view>
+          <text wx:for="{{roomList}}" class="roomNum {{item.isSel ? 'selRoom' : ''}}" catchtap="roomChange" data-index="{{index}}" >{{item.value}}间</text>
+        </view>
+      </view>
+
+
+      <view class="section tebie">
+        <view class="roomPerson" wx:for="{{roomNum}}" wx:for-item="room" wx:for-index="roomIndex">
+          <view class="roomBox">
+            <view class='room' wx:if="{{room.tag}}">
+              {{room.tag}}
+            </view>
+          </view>
+          <view class="person" wx:for="{{room.room}}">
+            <view class="view clear">
+              <block wx:if="{{!item.lastName}}">
+                <text wx:for="{{item.personType}}" wx:for-item="sex" wx:for-index="sexIndex" class="short sex {{sex.isSelPerson ? 'default' : ''}}" data-index="{{sexIndex}}" catchtap="selPersonType" data-required="1" data-parent-index="{{roomIndex}}">{{sex.value}}</text>
+                <input class="name" placeholder="姓：zhang" name="lastName{{roomIndex}}"/>
+                <input class="name" placeholder="名：san" name="firstName{{roomIndex}}"/>
+                <text class="control iconfont icon-tianjia" catchtap="addPersonBtn" data-room-index="{{roomIndex}}"></text>
+              </block>
+
+              <block wx:else>
+                <text class="short addBorder">{{item.sex}}</text>
+                <text class="short addBorder"><block wx:if="{{item.age}}">{{item.age}}岁</block></text>
+                <text class="name">{{item.lastName}}</text>
+                <text class="name">{{item.firstName}}</text>
+                <text class="control iconfont icon-shanchu" catchtap="minusPerson" data-room-index="{{roomIndex}}" data-index="{{index}}"></text>
+              </block>
+
+            </view>
+          </view>
+        </view>
+        <view class="line"></view>
+      </view>
+
+      <view class="item">
+        <view class="hotelCardTitle flexRow center between" catchtap="selHotelCard">
+          <text>持酒店会员卡</text>
+          <text class="arrow iconfont icon-xiangyoujiantou"></text>
+        </view>
+        <view class="hotelCard flexRow center between" wx:if="{{hotelCard}}">
+          <view>
+            <text class="cardValue" wx:if="{{hotelCard.name}}">{{hotelCard.name}} NO. {{hotelCard.no}}</text>
+            <text class="cardValue" wx:else>{{hotelCard.typeDetail.value}} NO. {{hotelCard.no}}</text>
+          </view>
+          <text class="controlCard iconfont icon-guanbi" catchtap="minusCard"></text>
+        </view>
+      </view>
+
+
+      <view class="arrivalTimeBox section">
+        <view class="pickerWrap">
+          <text class="formTag pickerChildLeft">抵店时间</text>
+          <picker name="arrivalTime" bindchange="arrivalTimeChange" value="{{arrivalTimeIndex}}" range="{{arrivalTimeList}}">
+            <view class="picker">
+              {{arrivalTimeList[arrivalTimeIndex]}}
+              <text class="arrow iconfont icon-xiangxiajiantou pickerChildright"></text>
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="item flexRow center between">
+        <text class="formTag">特殊要求</text>
+        <text class="switch {{isChange ? 'on': 'off'}}" catchtap="switchChange"></text>
+      </view>
+      <block wx:if="{{isNote}}">
+        <view class="tip">您的偏好我们会传达给酒店，但不能保证酒店一定可以满足，实际以酒店当天安排为准。如您一定需要酒店安排，请直接与酒店联系。</view>
+        <view class="bz-box">
+          <checkbox-group bindchange="noteCheckboxChange">
+            <label class="bz-checkbox" wx:for="{{demand}}">
+              <checkbox value="{{item.name}}" checked="{{item.checked}}" color="#fb5f0a"/>{{item.nameCn}}
+            </label>
+          </checkbox-group>
+          <view class="flexRow center bz-title">
+            <view>其他需求</view>
+            <view class="bz-secTip">请以<text class="txtOrange">英文</text>填写</view>
+          </view>
+          <textarea bindinput="noteTextArea" auto-height class="bz-textarea" />
+        </view>
+      </block>
+
+      <view class="formAreaTitle flexRow center" catchtap="cardTip">
+        信用卡信息<text class="iconfont icon-info shuoming"></text>
+      </view>
+      <view class="section">
+        <view class="pickerWrap">
+          <text class="formTag pickerChildLeft">卡种</text>
+          <picker class="validity" name="cardType" bindchange="cardsPickerChange" value="{{cardIndex}}" range="{{cardsArray}}">
+            <view class="picker">
+              {{cardsArray[cardIndex]}}
+              <text class='placeholder' wx:if="{{cardTypeStatus}}">信用卡类型</text>
+              <text class="arrow iconfont icon-xiangxiajiantou pickerChildright"></text>
+            </view>
+          </picker>
+        </view>
+        <view class="view flexRow center">
+          <text class="formTag">卡号</text>
+          <input placeholder="请输入卡号" value="{{formatCardNumber}}" type="number" name="cardNumber" bindinput="formatCardNumber" />
+        </view>
+        <view class="pickerWrap">
+          <text class="formTag pickerChildLeft">有效期</text>
+          <picker class="validity" name="cardExp" mode="date" value="{{dateMonth}}" start="2017-01" end="2047-12" fields="month" bindchange="dateMonthChange">
+            <view class="picker">
+              {{dateMonth}}
+              <text class='placeholder' wx:if="{{cardExpStatus}}">年份 - 月份</text>
+              <text class="arrow iconfont icon-xiangxiajiantou pickerChildright"></text>
+            </view>
+          </picker>
+        </view>
+
+      </view>
+
+
+      <view class="agreeTip">
+        <view>* 预订该房间表示您同意<text style="color:#fb5f0a;">取消政策</text> ；</view>
+        <view class="mgt5">* 如需<text style="color:#fb5f0a;">发票</text>，在入住完成后请向酒店索取。</view>
+      </view>
+  </view>
+  <view class="totalList flexRow between center">
+    <view class="flexRow center" catchtap='showPriceList'>
+      <view>
+        <view class="totalPrice">
+          <text class="totalTxt">总额 </text>
+          {{currencyCode}}{{rateTotal}}
+          <text class="{{isShowPriceListBtn ? 'iconfont icon-xiangshangjiantou' : ''}}"></text>
+        </view>
+        <view wx:if="{{ currencyCode != 'CNY'}}" class="totalCnyPrice"><text class="totalTxt">约合 </text>￥{{rateCnyTotal}}</view>
+      </view>
+
+    </view>
+    <view class="booking">
+      <button class="eBtn btnPrimary" formType="submit" wx:if="{{showSubmit}}">确认订单</button>
+      <view class="simulateBtn" wx:if="{{isSubmit}}">预订中...</view>
+    </view>
+  </view>
+</form>
+
+
+<!-- 弹出提示信息 -->
+<view class="promptToast" hidden="{{showToast.nullHouse}}">{{showToast.alertMsg}}</view>
+
+<!-- 添加同住人 -->
+<view class="popupBox" wx:if="{{isAddPerson}}">
+  <view class="blackBg"></view>
+  <view class="addBox" >
+    <view class="close iconfont icon-guanbi" catchtap="closeBox"></view>
+    <view class="addBoxTitle">增加同住人</view>
+    <view class="flexRow between addBoxSex">
+      <text wx:for="{{personType}}" class="{{item.isSelPerson ? 'default' : ''}}" data-index="{{index}}" data-sex="{{item.value}}" catchtap="selPersonType">{{item.value}}</text>
+    </view>
+
+    <view class="inputBox flexRow">
+      <input  placeholder="姓：zhang" bindinput="lastName" /><input  placeholder="名：san" bindinput="firstName"/>
+    </view>
+
+    <block wx:if="{{isChild}}">
+      <view class="ageTitle">请选择儿童年龄</view>
+      <view class="ageBox flexRow">
+        <view wx:for="{{childAge}}" class="age {{(index + 1) % 6 == 0 ? 'marginNone' : ''}} {{item.isSelAge ? 'selAge' : ''}}" data-index="{{index}}" data-value="{{item.age}}" catchtap="childAge">{{item.age}}</view>
+      </view>
+    </block>
+
+
+    <view class="btnBox">
+        <button class="eBtn btnPrimary" catchtap="addPersonConfirm">添加</button>
+    </view>
+
+  </view>
+</view>
+

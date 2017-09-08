@@ -1,0 +1,20 @@
+.loadingStatus{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  height: 1206rpx;
+}
+.loadingContent{
+  width:240px;
+  text-align: center;
+}
+.loadingContent image{
+  width:120rpx;
+  height: 120rpx;
+}
+.loadingContent text{
+  color: #888;
+  display: block;
+  padding-top: 30rpx;
+}

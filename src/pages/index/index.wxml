@@ -1,0 +1,93 @@
+<import src="/pages/showModal/showModal-template.wxml"/>
+<template is="showModal" data="{{...showModalData}}"/>
+
+<view class="searchBox">
+  <view class="tabBox">
+    <view class="tab">精选奢华酒店</view>
+   <!--  <view class="tab">度假线路</view> -->
+    <!-- <view class="animationBar" ></view> -->
+  </view>
+
+  <view class="showBox">
+    <!-- 酒店搜索 -->
+    <view class="flexColumn hotel">
+      <view class="flexRow item" catchtap="selectArea">
+        <view>
+          <text class="input" wx:if="{{area.nameCn != ''}}">{{area.nameCn}}</text>
+          <text class="inputPlaceholder" wx:else>城市</text>
+        </view>
+        <view>
+          <text class="arrow iconfont icon-xiangyoujiantou"></text>
+        </view>
+      </view>
+      <view class="flexRow itemDateInfo between center" catchtap="selectDate">
+        <view class="flexColumn">
+          <label class="tag">入住</label>
+          <text class="dateNum">{{checkinTxt}}</text>
+        </view>
+        <view class="daysInfo">
+          <text class="line"></text>
+          <text class="days">{{days}}晚</text>
+        </view>
+        <view class="flexColumn">
+          <label class="tag">离店</label>
+          <text class="dateNum">{{checkoutTxt}}</text>
+        </view>
+      </view>
+      <view class="flexRow item" catchtap="selectBrands">
+        <view class="brandName">
+          <text class="input" wx:if="{{brandNameCnArray.length != 0}}">{{brandNameCnArray}}</text>
+          <text class="inputPlaceholder" wx:else>酒店品牌</text>
+        </view>
+        <view>
+          <text class="brandNameNum" wx:if="{{brandNameCnArray != 0}}">{{brandNameCnArray.length}}</text>
+          <text class="arrow iconfont icon-xiangyoujiantou"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <button class="btn largeBtn btnPrimary" hover-class="press" catchtap="hotelListPage">立即预订</button>
+  <view class="preferential">
+    <view>
+      <text class="iconCny">￥</text>
+      <text class="preferentialTxt">新用户首单立返，最多返现2000元</text>
+    </view>
+  </view>
+  <view class="advantage" catchtap="advantage" >
+    <image src="https://file.36dong.com/badazhou/weixinxcx/advantage-small.png?1122" ></image>
+  </view>
+
+</view>
+
+
+<view class="box">
+  <view class="bigTitle">专属优待、最佳礼遇</view>
+  <view class="brandList brandBg">
+    <view wx:for="{{privilegeList}}" data-brand-id="{{item}}" catchtap="showPrivilege" class="brand"></view>
+  </view>
+</view>
+
+<navigator class="bestPrice" url="/pages/hotel/bestPrice/bestPrice">
+  <image src="https://file.36dong.com/badazhou/weixinxcx/bestPrice.jpg?08281428" class="bestPriceImg"></image>
+</navigator>
+
+
+<view class="shareBox">
+
+  <button class="share flexRow center" open-type="share" wx:if="{{!lowVersionShare}}">
+    <image src="/images/icon/share.png" class="shareIcon"></image>
+    点击转发好友
+  </button>
+  <button class="share flexRow center" open-type="share" wx:else>
+    <image src="/images/icon/share.png" class="shareIcon"></image>
+    点击右上角 [...] 转发好友
+  </button>
+
+</view>
+<view class="footer">
+  <text>中国十大奢华旅行社</text>
+  <text>Top 10 Chinese Luxury Travel Agency</text>
+</view>
+
+
+

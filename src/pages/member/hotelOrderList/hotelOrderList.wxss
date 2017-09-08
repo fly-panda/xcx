@@ -1,0 +1,101 @@
+.noOrder{
+  text-align: center;
+  color: #b2b2b2;
+  margin-top: 100rpx;
+}
+.bkItem{
+	background: #fff;
+	padding:30rpx;
+	margin-bottom: 30rpx;
+	border-top: 1rpx solid #e5e5e5;
+	border-bottom: 1rpx solid #e5e5e5;
+}
+.bkItem:first-child{
+  border-top: none;
+}
+.itemBox{
+  position: relative;
+  padding-bottom: 30rpx;
+  margin-bottom: 30rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.orderNo{
+ position: relative;
+ z-index: 2;
+}
+.noBg{
+  position: absolute;
+  z-index: 0;
+  width: 54rpx;
+  height:65rpx;
+  top: 0rpx;
+  left: 0;
+}
+.No{
+  color: #fff;
+  display: inline-block;
+  width: 54rpx;
+  text-align: center;
+}
+.itemTitle{
+	font-size: 16px;
+}
+.otherInfo{
+  margin-top: 30rpx;
+  position: relative;
+  height: 14px;
+}
+.orderDate{
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.bkStatus{
+  position: absolute;
+  top:-14px;
+  right: 0;
+	font-size: 12px;
+  font-weight: 600;
+}
+.waitting{
+	color: #f39c12;
+}
+.success{
+	color: #2ecc71;
+}
+.cancel{
+	color: #b2b2b2;
+}
+.roomType{
+	padding-top:30rpx;
+}
+.mainInfo{
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.mainInfo text{
+	font-size: 12px;
+	display: inline-block;
+	margin-right: 20rpx;
+	color: #b2b2b2;
+}
+.orderDate{
+  font-size: 12px;
+  color: #b2b2b2;
+}
+.totalPrice{
+  color: #fb5f0a;
+  font-size: 12px;
+  width:220rpx;
+  flex:none;
+  text-align:right;
+}
+.totalPriceNum{
+  font-size: 20px;
+}
+.more{
+  color: #888;
+  padding:30rpx;
+  text-align: center;
+}

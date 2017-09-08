@@ -1,0 +1,81 @@
+@import "/pages/showModal/showModal-template.wxss";
+
+.brandList{
+  box-sizing: border-box;
+  width: 750rpx;
+  padding: 0 30rpx 30rpx;
+}
+.tip{
+  height: 20px;
+  line-height: 20px;
+  padding-top: 13px;
+  color: #b2b2b2;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-bottom: 13px;
+}
+.tip text{
+  font-size: 16px;
+  color: #fc8f53;
+}
+.brandBox{
+  flex-wrap: wrap;
+}
+.brand{
+  position: relative;
+  box-sizing: border-box;
+  width: 210rpx;
+  margin-right: 30rpx;
+  background: #fff;
+  border:1rpx solid #e5e5e5;
+  margin-bottom: 30rpx;
+  padding:10rpx 0;
+}
+.name{
+  padding-left:10rpx;
+  padding-right: 10rpx;
+  width: 210rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 13px;
+}
+.marginNone{
+  margin-right: 0;
+}
+.checked{
+  border:1rpx solid #fc8f53;
+  background: #fc8f53;
+  color: #fff;
+}
+.brand text{
+  color: #fc8f53;
+  font-size: 16px;
+  margin-right: 0;
+}
+.checked text{
+  color: #fff;
+}
+.brandBtnWrap{
+  padding: 0 30rpx;
+  height: 65px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top:1rpx solid #e5e5e5;
+  box-sizing: border-box;
+}
+button{
+  flex: 1;
+  height:38px;
+  line-height:38px;
+  border:0;
+}
+.privilegeInfo{
+  color: #fc8f53;
+  border-bottom: 1px solid #fc8f53;
+  padding-bottom: 3px;
+}

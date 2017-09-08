@@ -1,0 +1,268 @@
+@import "/pages/loading/loading-template.wxss";
+.roomPlanBox{
+  position: relative;
+  z-index: 0;
+  padding-bottom: 86px;
+}
+.roomInfo{
+  background: #fff;
+  padding:0;
+  flex-direction: column;
+  font-size: 14px;
+  border-bottom:1rpx solid #e5e5e5;
+}
+.roomInfo > view{
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.roomInfo > view:last-child{
+  border-bottom:none;
+}
+.roomType{
+  padding:30rpx 0;
+  font-size: 16px;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.roomDetail{
+  padding:30rpx;
+  background: #f4f4f4;
+}
+.roomDetail text{
+  padding-top:20rpx;
+  display: block;
+}
+.roomDetail text:first-child{
+  padding-top: 0;
+}
+.roomPlan{
+  font-size: 14px;
+  padding:30rpx;
+  border-bottom:1rpx solid #e5e5e5;
+}
+.contain{
+  margin-top: 20rpx;
+}
+.contain view{
+  font-size: 12px;
+  border-left: 1px solid #e5e5e5;
+  margin-left: 20rpx;
+  padding-left: 20rpx;
+  color: #b2b2b2;
+}
+.contain view:first-child{
+  border-left: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+.itemBox{
+  color: #888888;
+}
+.itemBoxTitle{
+  padding:30rpx;
+  background: #f4f4f4;
+  color: #353535;
+}
+.itemBoxTip{
+  color: #b2b2b2;
+  font-size: 12px;
+  margin-top:20rpx;
+  padding-left:30rpx;
+}
+.stress{
+  color: #fc8f53;
+  font-weight: 600;
+}
+.itemBoxContent{
+  position: relative;
+  padding: 30rpx;
+  background: #ffffff;
+  border-top:1rpx solid #e5e5e5;
+  border-bottom:1rpx solid #e5e5e5;
+}
+.item{
+  padding-top:20rpx;
+  display: flex;
+}
+.item:first-child{
+  padding-top: 0;
+}
+.dot{
+  width: 5px;
+  flex:none;
+  font-weight: 600;
+  color: #928464;
+  margin-right: 10rpx;
+}
+
+.privilege{
+  color: #928464;
+}
+.dateInfo{
+  justify-content: space-between;
+  margin-top:20rpx;
+  font-size:13px;
+  border-top:1rpx solid #e5e5e5;
+  padding-top:20rpx;
+}
+.totalList{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  padding:0 30rpx;
+  border-top:1rpx solid #e5e5e5;
+  background: #fff;
+  box-sizing:border-box;
+  z-index: 10;
+}
+.totalTxt{
+  color: #b2b2b2;
+  font-size: 12px;
+}
+.totalPrice{
+  font-size: 18px;
+  color: #fb5f0a;
+}
+.priceInfo{
+  margin-left: 20rpx;
+  padding:10rpx 16rpx;
+  color: #888;
+  font-size: 12px;
+  border-radius: 5px;
+}
+.icon-xiangshangjiantou{
+  font-size: 13px;
+  margin-right: 0;
+}
+.icon-xiangxiajiantou{
+  font-size: 13px;
+  margin-right: 0;
+}
+
+.totalCnyPrice{
+  margin-top: 10rpx;
+  color: #888;
+}
+.priceInfoWrap{
+  width: 750rpx;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.blackBg{
+  position: absolute;
+  left: 0;
+  bottom:0;
+  width: 750rpx;
+  z-index: 2;
+  background: #000;
+  opacity: .5;
+}
+.priceContent{
+  width: 750rpx;
+  position: absolute;
+  background: #fff;
+  bottom: 65px;
+  left: 0;
+  z-index: 3;
+}
+.priceTitle{
+  background: #f4f4f4;
+  padding:30rpx;
+  font-weight: 600;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.box{
+  padding: 0 30rpx;
+}
+.box view{
+  padding:30rpx 0;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.tip{
+  padding: 30rpx;
+  font-size: 12px;
+  color: #b2b2b2;
+}
+
+.tagInfo{
+  color: #fb5f0a;
+}
+.currency{
+  font-weight: normal;
+  color: #888888;
+}
+
+
+.cashBackBox{
+  padding: 30rpx;
+  border-bottom:1rpx solid #e5e5e5;
+}
+.cashBack{
+  padding-bottom: 10rpx;
+}
+.cashTip{
+  color: #b2b2b2;
+  font-size: 12px;
+}
+.backPrice{
+  color: #fb5f0a;
+  font-size: 16px;
+  padding-left: 20rpx;
+}
+.guarantee{
+  padding:30rpx 0;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.cancelInfoShortTran{
+  color: #888;
+  font-size: 13px;
+}
+.guaranteeTypeDescTran{
+  display: block;
+  color: #b2b2b2;
+  margin-top: 10rpx;
+  font-size: 13px;
+}
+.totalPriceBox{
+  height: 65px;
+}
+.shuoming{
+  color: #928464;
+  font-size: 18px;
+  margin-left: 10rpx;
+}
+.zhuanxiangImg{
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right:2px;
+  background:#fc8f53;
+}
+.zhuanxiangImg image{
+  width: 16px;
+  height: 16px;
+  margin-left: 1px;
+  margin-top: 1px;
+}
+.icon-fanyi{
+  font-size: 20px;
+  margin-right: 0px;
+  color: #928464;
+}
+.translateCn{
+  position: absolute;
+  bottom: 5rpx;
+  right: 0rpx;
+  padding:20rpx;
+}
+.itemTran{
+  margin-top: 20rpx;
+  padding: 20rpx;
+  background: #f9f9f9;
+  line-height:21px;
+}

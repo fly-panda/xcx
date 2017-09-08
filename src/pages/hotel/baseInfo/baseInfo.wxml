@@ -1,0 +1,41 @@
+<view class="wrap">
+  <view class="module">
+    <view class="title">酒店信息</view>
+    <view class="content">
+      <view>
+        <text class="tag">入住：</text>{{hotelBaseInfo.checkinTime}}
+      </view>
+      <view>
+        <text class="tag">退房：</text>{{hotelBaseInfo.checkoutTime}}
+      </view>
+      <view>
+        <text class="tag">电话：</text><text class="phone"></text>{{hotelBaseInfo.businessPhoneNumber}}
+      </view>
+      <view class="flexRow">
+        <text class="tag addr">地址：</text><text></text><text>{{hotelBaseInfo.address}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="module" wx:if="{{fami}}">
+    <view class="title">家庭政策</view>
+    <view class="content">
+      <view wx:for="{{fami}}">{{item}}</view>
+      <view class="itemTran" wx:if="{{famiTran}}">
+        {{famiTran}}
+      </view>
+      <view class="translateCn" catchtap="translateCn" data-name="fami" wx:if="{{!famiTran}}">
+        <text class="iconfont icon-fanyi"></text>
+      </view>
+    </view>
+  </view>
+
+  <view class="module" wx:if="{{hotelBaseInfo.acceptCardList.length}}">
+    <view class="title">支持信用卡</view>
+    <view class="content">
+      <block wx:for="{{hotelBaseInfo.acceptCardList}}">
+        <view>{{item.name}}</view>
+      </block>
+    </view>
+  </view>
+</view>
+

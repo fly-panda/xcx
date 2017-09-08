@@ -1,0 +1,134 @@
+.Wrap{
+  padding-top: 150rpx;
+  height: 190rpx;
+  text-align: center;
+  background: url('https://file.36dong.com/badazhou/weixinxcx/bg/login-bg.jpg') no-repeat;
+  background-size:750rpx 340rpx;
+}
+
+.slogan{
+  display: block;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color:#928464;
+}
+.loginBtn{
+  font-size: 14px;
+  background: #fb5f0a;
+  color:#ffffff;
+  width: 240rpx;
+}
+.memberName{
+
+}
+.memberBox{
+  display: inline-block;
+  width:380rpx;
+  height: 104rpx;
+  position: relative;
+}
+.whiteBg{
+  background: #fff;
+  opacity: .8;
+  position: absolute;
+  z-index: 1;
+  width:380rpx;
+  height: 104rpx;
+  border-radius: 10rpx;
+}
+.member{
+  margin-top: 20rpx;
+  position: relative;
+  z-index: 2;
+
+}
+.member text{
+  display: inline-block;
+  height: 64rpx;
+  line-height: 64rpx;
+  vertical-align: middle;
+}
+.exit{
+  margin-left: 20rpx;
+}
+.userPhoto{
+  width: 64rpx;
+  height: 64rpx;
+  vertical-align: middle;
+}
+.itemList{
+  display: flex;
+  flex-direction: column;
+}
+.item{
+  font-size: 16px;
+  height: 26px;
+  padding:30rpx;
+  margin-top: 15px;
+  background: #ffffff;
+  border-top:1rpx solid #e5e5e5;
+  border-bottom:1rpx solid #e5e5e5;
+  vertical-align: middle;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+.item:last-child{
+  height: auto;
+}
+.memberName{
+  font-size: 16px;
+  color: #fb5f0a;
+}
+
+.item-info{
+  border-top: 1rpx dotted #e5e5e5;
+  font-size: 14px;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  color: #888;
+}
+.item-info:first-child{
+  border-top: 1rpx solid #e5e5e5;
+}
+.contact{
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  padding:30rpx 30rpx 10rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  vertical-align: middle;
+  background: #fff;
+  border-top:1rpx solid #e5e5e5;
+  border-bottom:1rpx solid #e5e5e5;
+}
+.contactTitle{
+  padding-bottom: 30rpx;
+}
+.kefu{
+  position:relative;
+  display:flex;
+  margin-left:0;
+  margin-right:0;
+  padding-left:0;
+  padding-right:0;
+  box-sizing:border-box;
+  font-size:14px;
+  text-align:center;
+  text-decoration:none;
+  line-height:24px;
+  border-radius:0;
+  -webkit-tap-highlight-color:transparent;
+  overflow:hidden;
+  color:#333;
+  background-color:#fff;
+  flex: 1;
+  color: #888;
+}
+.kefu::after{
+  border:0;
+}
+.icon-shijian{
+  font-size: 20px;
+}

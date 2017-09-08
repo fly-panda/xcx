@@ -1,0 +1,282 @@
+.mt-30 {
+  margin-top: 30rpx;
+}
+.b {
+  font-weight: 600;
+}
+/* header */
+.header {
+  font-size: 18px;
+  padding: 30rpx;
+  height: 102rpx;
+  word-break: break-all;
+  position: fixed;background: #fff;
+  z-index: 999;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 1px 8px rgba(0,0,0,.1);
+  align-items: center;
+  width: 100%;
+}
+/* .header .routeName {
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+} */
+.header .collect {
+  padding-left: 20rpx;
+  height: 50rpx;
+}
+.header .collect image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+
+.collect {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width:100%;
+  background:#fff;
+  line-height:50px;
+  text-align:center;
+  border-top: 1rpx solid #e5e5e5;
+  /* box-shadow: 0 -1px 8px rgba(0,0,0,.1); */
+}
+.collect text{
+  vertical-align: middle;
+  display: inline-block;
+  height: 18px;
+  line-height: 18px;
+}
+.collect text.iconfont {
+  font-size: 18px;
+  line-height: 20px;
+}
+.collect > view {
+  text-align: center;
+  width: 66px;
+  margin: 0 auto;
+}
+.collect .active {
+  color: #fb5f0a;
+}
+.collect image {
+  width: 60rpx;
+  height: 60rpx;
+  display: block;
+}
+/* container */
+.container {
+  background: #fff;
+  padding-bottom: 50px;
+}
+.container .h1 {
+  padding: 30rpx;
+  font-size: 16px;
+  font-weight: 600;
+  word-break: break-all;
+}
+.container  .wrap {
+  background: #fff;
+  /* padding-bottom: 10rpx; */
+}
+.to {
+  width: 33px;
+  height: 5px;
+  margin: 0 6px;
+}
+.day .day-number {
+  font-size: 19px;
+  background: url('http://file.36dong.com/badazhou/weixinxcx/bg/day.png?111111111111');
+  color: #fff;
+  width: 70rpx;
+  height: 72rpx;
+  line-height: 70rpx;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-left: 30rpx;
+  text-align: center;
+}
+.day {
+  align-items: center;
+}
+.city {
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 30rpx;
+
+}
+.content {
+  padding: 0 30rpx;
+  padding-bottom: 0;
+
+}
+.content .title {
+  font-size: 18px;
+  align-items: center;
+  /* margin-bottom: 20rpx; */
+}
+.route-list {
+  /* border-left: 1px solid #ededed; */
+  margin-left: 35rpx;
+  padding-bottom: 10rpx;
+  /* margin-top: 10rpx; */
+  padding-top: 10rpx;
+  box-sizing: border-box;
+}
+.item {
+  box-sizing: border-box;
+  position: relative;
+  padding-left: 65rpx;
+  padding-top: 10rpx;
+  /* margin-bottom: 60rpx; */
+  border-left: 1px solid #ededed;
+  padding-bottom: 50rpx;
+}
+.route-list .item .icon {
+  position: absolute;
+  left: -14rpx;
+  background: #fff;
+  height: 25px;
+  line-height: 25px;
+}
+.route-list .item .icon .iconfont {
+  font-size: 16px;
+}
+.h5 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  height: 25px;
+  line-height: 25px;
+  display: none;
+}
+.textBox {
+  font-size: 14px;
+  /* margin-bottom: 5px; */
+  padding-top: 4px;
+}
+
+.imgBox {
+  width: 595rpx;
+  justify-content: space-between;
+  margin-top: 60rpx;
+}
+.imgView {
+  width: 192rpx;
+  height: 192rpx;
+}
+.img {
+  width: 192rpx;
+  height: 192rpx;
+}
+
+.hotelInfo image,.left {
+  width: 160rpx;
+  height: 160rpx;
+}
+.hotelInfo .right {
+  /* background: #fbf7ec; */
+  background: #fafafa;
+  border-left: none;
+  flex: 1;
+  padding: 12rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hotelInfo .right .hotelName {
+  font-size: 16px;
+  color: #333;
+}
+.hotelInfo .right .roomType {
+  color: #b2b2b2;
+}
+
+/* 提示框 */
+.promptToast{
+  width:420rpx;
+  height:65px;
+  top:460rpx;
+  left: 26%;
+  line-height: 65px;
+  border-radius:10px;
+  background-color: rgb(114,113,113);
+  color:#ffffff;
+  font-size: 16px;
+  text-align: center;
+  position: fixed;
+  z-index: 100;
+  opacity: 0.85;
+}
+
+/* flightInfo */
+.flightTitle {
+  margin-bottom: 20rpx;
+  color: #888;
+}
+.flightInfo {
+  position: relative;
+  align-items: center;
+}
+.flight-line {
+  position: absolute;
+  width: 2px;
+  background: #e5e5e5;
+  height: 76%;
+  left: 140rpx;
+  top: 12%;
+  box-sizing: border-box;
+}
+.flight-line::before {
+  position: absolute;
+  left: -2px;
+  width: 4px;
+  height: 4px;
+  background-color: #e5e5e5;
+  content: '';
+  border-radius: 50%;
+  border: 1px solid #e5e5e5;
+}
+.flight-line::after {
+  position: absolute;
+  bottom: 0;
+  left: -2px;
+  width: 4px;
+  height: 4px;
+  background-color: #e5e5e5;
+  /* color: #e5e5e5; */
+  content: '';
+  border-radius: 50%;
+  border: 1px solid #e5e5e5;
+}
+.flightTime {
+  font-size: 16px;
+  width: 80rpx;
+}
+.airport {
+  margin-left: 120rpx;
+}
+.transferInfo {
+  align-items: baseline;
+  margin: 20rpx 0;
+}
+.transferInfo .circle {
+  color: #fb5f0a;
+  border: 1px solid #fb5f0a;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  margin-left: 120rpx;
+  margin-right: 40rpx;
+  font-size: 12px;
+}
+.transferCity {
+  color: #fb5f0a;
+  font-size: 12px;
+}
